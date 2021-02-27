@@ -1,13 +1,11 @@
 import React from 'react';
-
-import Header from '../components/Header'
-import Navigation from '../components/Navigation'
+import Button from '../components/Button'
 
 const Home = () => {
     return(
         <div>
-            <Header />
-            <Navigation />
+            <p>This is the Home page</p>
+            <Button>Click Me</Button>
         </div>
     );
 };
