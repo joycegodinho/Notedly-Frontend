@@ -2,7 +2,8 @@
   "name": "notedly-frontend",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "src/index.html",
+  "type": "module",
   "scripts": {
     "dev": "parcel src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,13 +12,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@apollo/client": "^3.3.11",
     "@types/react": "^17.0.2",
+    "apollo-link-context": "^1.0.20",
     "components": "^0.1.0",
+    "graphql": "^15.5.0",
     "normalize.css": "^8.0.1",
     "parcel-bundler": "^1.12.4",
+    "re": "^0.1.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "graphql-request": "^3.4.0"
   }
 }
