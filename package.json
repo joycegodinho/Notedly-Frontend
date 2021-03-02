@@ -16,6 +16,7 @@
     "@types/react": "^17.0.2",
     "apollo-link-context": "^1.0.20",
     "components": "^0.1.0",
+    "date-fns": "^2.18.0",
     "graphql": "^15.5.0",
     "normalize.css": "^8.0.1",
     "parcel-bundler": "^1.12.4",
@@ -24,6 +25,7 @@
     "react-dom": "^17.0.1",
     "react-markdown": "^5.0.3",
     "react-router-dom": "^5.2.0",
+    "styled": "^1.0.0",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
