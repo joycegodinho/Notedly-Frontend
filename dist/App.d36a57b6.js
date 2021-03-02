@@ -97021,7 +97021,27 @@ var NoteFeed = function NoteFeed(_ref) {
 
 var _default = NoteFeed;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./Note":"components/Note.js"}],"pages/home.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./Note":"components/Note.js"}],"components/Button.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _templateObject;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Button = _styledComponents.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral([" \n    display: block;\n    padding: 10px;\n    border: none;\n    border-radius: 5px;\n    font-size: 18px;\n    color: #fff;\n    background-color: #0077cc;\n    cursor: pointer;\n\n    :hover {\n        opacity: 0.8;\n    }\n\n    :active {\n        background-color: #005fa3;\n    }\n"])));
+
+var _default = Button;
+exports.default = _default;
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"pages/home.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -97035,9 +97055,23 @@ var _client = require("@apollo/client");
 
 var _NoteFeed = _interopRequireDefault(require("../components/NoteFeed"));
 
+var _Button = _interopRequireDefault(require("../components/Button"));
+
 var _templateObject;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -97052,14 +97086,33 @@ var Home = function Home() {
 
   if (loading) return /*#__PURE__*/_react.default.createElement("p", null, "Loading...");
   if (error) return /*#__PURE__*/_react.default.createElement("p", null, "Error!");
-  return /*#__PURE__*/_react.default.createElement(_NoteFeed.default, {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_NoteFeed.default, {
     notes: data.noteFeed.notes
-  });
+  }), data.noteFeed.hasNextPage && /*#__PURE__*/_react.default.createElement(_Button.default, {
+    onClick: function onClick() {
+      return fetchMore({
+        variables: {
+          cursor: data.noteFeed.cursor
+        },
+        updateQuery: function updateQuery(previusResult, _ref) {
+          var fetchMoreResult = _ref.fetchMoreResult;
+          return {
+            noteFeed: {
+              cursor: fetchMoreResult.noteFeed.cursor,
+              hasNextPage: fetchMoreResult.noteFeed.hasNextPage,
+              notes: [].concat(_toConsumableArray(previusResult.noteFeed.notes), _toConsumableArray(fetchMoreResult.noteFeed.notes)),
+              __typename: 'noteFeed'
+            }
+          };
+        }
+      });
+    }
+  }, "Load More"));
 };
 
 var _default = Home;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteFeed":"components/NoteFeed.js"}],"pages/mynotes.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteFeed":"components/NoteFeed.js","../components/Button":"components/Button.js"}],"pages/mynotes.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -97250,7 +97303,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54918" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59453" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
