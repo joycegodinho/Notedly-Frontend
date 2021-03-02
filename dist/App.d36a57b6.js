@@ -97075,7 +97075,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var GET_NOTES = (0, _client.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    query NoteFeed($cursor: String) {\n        noteFeed(cursor: $cursor) {\n            cursor\n            hasNextPage\n            notes {\n                id\n                createdAt\n                content\n                favoriteCount\n                author {\n                    username\n                    id\n                }\n            }\n        }\n    }\n\n"])));
+var GET_NOTES = (0, _client.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    query NoteFeed($cursor: String) {\n        noteFeed(cursor: $cursor) {\n            cursor\n            hasNextPage\n            notes {\n                id\n                createdAt\n                content\n                favoriteCount\n                author {\n                    username\n                    id\n                }\n            }\n        }\n    }\n"])));
 
 var Home = function Home() {
   var _useQuery = (0, _client.useQuery)(GET_NOTES),
@@ -97201,7 +97201,123 @@ var NotePage = function NotePage(props) {
 
 var _default = NotePage;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/Note":"components/Note.js"}],"pages/index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/Note":"components/Note.js"}],"pages/signup.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _client = require("@apollo/client");
+
+var _Button = _interopRequireDefault(require("../components/Button"));
+
+var _templateObject, _templateObject2, _templateObject3;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var SIGNUP_USER = (0, _client.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    mutation signUp($email: String!, $username: String!, $password: String!){\n        signUp(email: $email, username: $username, password: $password)\n    }\n"])));
+
+var Wrapper = _styledComponents.default.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    border 1px solid #f5f4f0;\n    max-width: 500px;\n    padding: 1em;\n    margin: 0 auto;\n"])));
+
+var Form = _styledComponents.default.form(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    label,\n    input {\n        display: block;\n        line-height: 2em;\n    }\n    input {\n        width: 100%;\n        margin-bottom: 1em;\n    }\n"])));
+
+var SignUp = function SignUp(props) {
+  var _useState = (0, _react.useState)(),
+      _useState2 = _slicedToArray(_useState, 2),
+      values = _useState2[0],
+      setValues = _useState2[1];
+
+  var onChange = function onChange(event) {
+    setValues(_objectSpread(_objectSpread({}, values), {}, _defineProperty({}, event.target.name, event.target.value)));
+  };
+
+  (0, _react.useEffect)(function () {
+    document.title = 'Sign Up - Notedly';
+  });
+
+  var _useMutation = (0, _client.useMutation)(SIGNUP_USER, {
+    onCompleted: function onCompleted(data) {
+      return console.log(data.signUp);
+    }
+  }),
+      _useMutation2 = _slicedToArray(_useMutation, 2),
+      signUp = _useMutation2[0],
+      _useMutation2$ = _useMutation2[1],
+      loading = _useMutation2$.loading,
+      error = _useMutation2$.error;
+
+  return /*#__PURE__*/_react.default.createElement(Wrapper, null, /*#__PURE__*/_react.default.createElement("h2", null, "Sign Up"), /*#__PURE__*/_react.default.createElement(Form, {
+    onSubmit: function onSubmit(event) {
+      event.preventDefault();
+      signUp({
+        variables: _objectSpread({}, values)
+      });
+    }
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "username"
+  }, "Username:"), /*#__PURE__*/_react.default.createElement("input", {
+    required: true,
+    type: "text",
+    id: "username",
+    name: "username",
+    placeholder: "username",
+    onChange: onChange
+  }), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "email"
+  }, "Email:"), /*#__PURE__*/_react.default.createElement("input", {
+    required: true,
+    type: "email",
+    id: "email",
+    name: "email",
+    placeholder: "Email",
+    onChange: onChange
+  }), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "password"
+  }, "Password:"), /*#__PURE__*/_react.default.createElement("input", {
+    required: true,
+    type: "password",
+    id: "password",
+    name: "password",
+    placeholder: "Password",
+    onChange: onChange
+  }), /*#__PURE__*/_react.default.createElement(_Button.default, {
+    type: "submit"
+  }, "Submit")));
+};
+
+var _default = SignUp;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/Button":"components/Button.js"}],"pages/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -97223,6 +97339,8 @@ var _favorites = _interopRequireDefault(require("./favorites"));
 
 var _note = _interopRequireDefault(require("./note"));
 
+var _signup = _interopRequireDefault(require("./signup"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Pages = function Pages() {
@@ -97239,12 +97357,15 @@ var Pages = function Pages() {
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/note/:id",
     component: _note.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/signup",
+    component: _signup.default
   })));
 };
 
 var _default = Pages;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../components/Layout":"components/Layout.js","./home":"pages/home.js","./mynotes":"pages/mynotes.js","./favorites":"pages/favorites.js","./note":"pages/note.js"}],"App.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../components/Layout":"components/Layout.js","./home":"pages/home.js","./mynotes":"pages/mynotes.js","./favorites":"pages/favorites.js","./note":"pages/note.js","./signup":"pages/signup.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -97303,7 +97424,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59453" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64438" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

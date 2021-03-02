@@ -21,9 +21,7 @@ const GET_NOTES = gql`
             }
         }
     }
-
 `;
-
 
 const Home = () => {
 
