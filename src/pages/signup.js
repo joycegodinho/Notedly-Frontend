@@ -37,9 +37,13 @@ const SignUp = props => {
     };
 
     useEffect (() => { document.title = 'Sign Up - Notedly' });
-
+    const client = useApolloClient();
     const [signUp, { loading, error }] = useMutation(SIGNUP_USER, {
-        onCompleted: data => console.log(data.signUp)
+        onCompleted: data => {
+            localStorage.setItem('token', data.signUp);
+            client.writeData({ data: { isLoggedIn: true }});
+            props.history.push('/')
+        }
     });
 
     return (
