@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useQuery, gql } from '@apollo/client';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import { InMemoryCache } from 'apollo-cache-inmemory'
+
+import ButtonAsLink from './ButtonAsLink';
 
 const IS_LOGGED_IN = gql`
     {
@@ -32,13 +35,28 @@ const UserState = styled.div`
 `;
 
 const Header = props => {
-    const { data } = useQuery(IS_LOGGED_IN);
+    const { data, client } = useQuery(IS_LOGGED_IN);
     return (
         <HeaderBar>
             <LogoText>Notedly</LogoText>
             <UserState>
                 {data.isLoggedIn ? (
-                    <p>Log Out</p>
+                    <ButtonAsLink onClick={() => {
+                        client.writeQuery({ 
+                            query: gql`
+                                query Logged {
+                                    isLoggedIn
+                                }
+                            `,
+                            data: {isLoggedIn: false}})
+                        localStorage.removeItem('token');
+                        //client.resetStore();
+
+                        props.history.push('/')
+                    }}
+                    >
+                        Log Out
+                    </ButtonAsLink>
                 ) : (
                     <p>
                         <Link to={'/signin'}>Sign In</Link> or{' '}
@@ -52,4 +70,4 @@ const Header = props => {
     );
 };
 
-export default Header;
+export default withRouter(Header);

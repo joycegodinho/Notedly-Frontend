@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useMutation, useApolloClient, gql } from '@apollo/client'
+import { InMemoryCache } from 'apollo-cache-inmemory'
 
 import Button from '../components/Button';
 
@@ -41,7 +42,13 @@ const SignUp = props => {
     const [signUp, { loading, error }] = useMutation(SIGNUP_USER, {
         onCompleted: data => {
             localStorage.setItem('token', data.signUp);
-            client.writeData({ data: { isLoggedIn: true }});
+            client.writeQuery({ 
+                query: gql`
+                    query Logged {
+                        isLoggedIn
+                    }
+                `,
+                data: {isLoggedIn: true}})
             props.history.push('/')
         }
     });

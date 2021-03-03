@@ -33,7 +33,7 @@ const data = {
 
 cache.writeData({ data });
 // write the cache data after cache is reset
-//client.onResetStore(() => cache.writeData({ data }));
+client.onResetStore(() => cache.writeData({ data }));
 
 const App = () => (
         <ApolloProvider client={client}>

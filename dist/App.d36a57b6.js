@@ -73676,7 +73676,27 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"../node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"../node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"../node_modules/react/index.js","history":"../node_modules/history/esm/history.js","prop-types":"../node_modules/prop-types/index.js","tiny-warning":"../node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"../node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"components/Header.js":[function(require,module,exports) {
+},{"react-router":"../node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"../node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"../node_modules/react/index.js","history":"../node_modules/history/esm/history.js","prop-types":"../node_modules/prop-types/index.js","tiny-warning":"../node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"../node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"components/ButtonAsLink.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _templateObject;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var ButtonAsLink = _styledComponents.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral([" \n    backgound: none;\n    color: #0077cc;\n    padding: 0px;\n    border: none;\n    font: inherit;\n    text-decoration: underline;\n    cursor: pointer;\n\n    :hover,\n    :active {\n        color: #004499;\n    }\n"])));
+
+var _default = ButtonAsLink;
+exports.default = _default;
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"components/Header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -73692,7 +73712,11 @@ var _client = require("@apollo/client");
 
 var _reactRouterDom = require("react-router-dom");
 
-var _templateObject, _templateObject2, _templateObject3, _templateObject4;
+var _apolloCacheInmemory = require("apollo-cache-inmemory");
+
+var _ButtonAsLink = _interopRequireDefault(require("./ButtonAsLink"));
+
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -73708,18 +73732,32 @@ var UserState = _styledComponents.default.div(_templateObject4 || (_templateObje
 
 var Header = function Header(props) {
   var _useQuery = (0, _client.useQuery)(IS_LOGGED_IN),
-      data = _useQuery.data;
+      data = _useQuery.data,
+      client = _useQuery.client;
 
-  return /*#__PURE__*/_react.default.createElement(HeaderBar, null, /*#__PURE__*/_react.default.createElement(LogoText, null, "Notedly"), /*#__PURE__*/_react.default.createElement(UserState, null, data.isLoggedIn ? /*#__PURE__*/_react.default.createElement("p", null, "Log Out") : /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  return /*#__PURE__*/_react.default.createElement(HeaderBar, null, /*#__PURE__*/_react.default.createElement(LogoText, null, "Notedly"), /*#__PURE__*/_react.default.createElement(UserState, null, data.isLoggedIn ? /*#__PURE__*/_react.default.createElement(_ButtonAsLink.default, {
+    onClick: function onClick() {
+      client.writeQuery({
+        query: (0, _client.gql)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n                                query Logged {\n                                    isLoggedIn\n                                }\n                            "]))),
+        data: {
+          isLoggedIn: false
+        }
+      });
+      localStorage.removeItem('token'); //client.resetStore();
+
+      props.history.push('/');
+    }
+  }, "Log Out") : /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: '/signin'
   }, "Sign In"), " or", ' ', /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: '/signup'
   }, "Sign Up"))));
 };
 
-var _default = Header;
+var _default = (0, _reactRouterDom.withRouter)(Header);
+
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","@apollo/client":"../node_modules/@apollo/client/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js"}],"components/Navigation.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","@apollo/client":"../node_modules/@apollo/client/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","apollo-cache-inmemory":"../node_modules/apollo-cache-inmemory/lib/bundle.esm.js","./ButtonAsLink":"components/ButtonAsLink.js"}],"components/Navigation.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -101413,9 +101451,11 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _client = require("@apollo/client");
 
+var _apolloCacheInmemory = require("apollo-cache-inmemory");
+
 var _Button = _interopRequireDefault(require("../components/Button"));
 
-var _templateObject, _templateObject2, _templateObject3;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -101467,7 +101507,8 @@ var SignUp = function SignUp(props) {
   var _useMutation = (0, _client.useMutation)(SIGNUP_USER, {
     onCompleted: function onCompleted(data) {
       localStorage.setItem('token', data.signUp);
-      client.writeData({
+      client.writeQuery({
+        query: (0, _client.gql)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n                    query Logged {\n                        isLoggedIn\n                    }\n                "]))),
         data: {
           isLoggedIn: true
         }
@@ -101522,7 +101563,7 @@ var SignUp = function SignUp(props) {
 
 var _default = SignUp;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/Button":"components/Button.js"}],"pages/index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","@apollo/client":"../node_modules/@apollo/client/index.js","apollo-cache-inmemory":"../node_modules/apollo-cache-inmemory/lib/bundle.esm.js","../components/Button":"components/Button.js"}],"pages/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -101620,7 +101661,12 @@ var data = {
 cache.writeData({
   data: data
 }); // write the cache data after cache is reset
-//client.onResetStore(() => cache.writeData({ data }));
+
+client.onResetStore(function () {
+  return cache.writeData({
+    data: data
+  });
+});
 
 var App = function App() {
   return /*#__PURE__*/_react.default.createElement(_client.ApolloProvider, {
@@ -101658,7 +101704,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56297" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56585" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
