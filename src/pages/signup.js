@@ -19,13 +19,7 @@ const SignUp = props => {
     const [signUp, { loading, error }] = useMutation(SIGNUP_USER, {
         onCompleted: data => {
             localStorage.setItem('token', data.signUp);
-            client.writeQuery({ 
-                query: gql`
-                    query Logged {
-                        isLoggedIn
-                    }
-                `,
-                data: {isLoggedIn: true}})
+            client.writeData({ data: { isLoggedIn: true }});
             props.history.push('/')
         }
     });

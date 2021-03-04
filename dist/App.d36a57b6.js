@@ -10814,7 +10814,7 @@ if ("development" !== "production") {
       }
 
       var eventName = 'on' + eventNameSuffix;
-      var isSupported = (eventName in document);
+      var isSupported = eventName in document;
 
       if (!isSupported) {
         var element = document.createElement('div');
@@ -30749,7 +30749,9 @@ function _getPrototypeOf(o) {
  * and stack trace, it also includes information about the locations in a
  * GraphQL document and/or execution result that correspond to the Error.
  */
-var GraphQLError = /*#__PURE__*/function (_Error) {
+var GraphQLError =
+/*#__PURE__*/
+function (_Error) {
   _inherits(GraphQLError, _Error);
 
   var _super = _createSuper(GraphQLError);
@@ -30957,7 +30959,9 @@ var GraphQLError = /*#__PURE__*/function (_Error) {
   }]);
 
   return GraphQLError;
-}( /*#__PURE__*/_wrapNativeSuper(Error));
+}(
+/*#__PURE__*/
+_wrapNativeSuper(Error));
 /**
  * Prints a GraphQLError to a string, representing useful location information
  * about the error's position in the source.
@@ -31144,7 +31148,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * Contains a range of UTF-8 character offsets and token references that
  * identify the region of the source from which the AST derived.
  */
-var Location = /*#__PURE__*/function () {
+var Location =
+/*#__PURE__*/
+function () {
   /**
    * The character offset at which this Node begins.
    */
@@ -31192,7 +31198,9 @@ exports.Location = Location;
  * within a Source.
  */
 
-var Token = /*#__PURE__*/function () {
+var Token =
+/*#__PURE__*/
+function () {
   /**
    * The kind of Token.
    */
@@ -31545,7 +31553,9 @@ function _createClass(Constructor, protoProps, staticProps) {
  * be useful for `name` to be `"Foo.graphql"` and location to be `{ line: 40, column: 1 }`.
  * The `line` and `column` properties in `locationOffset` are 1-indexed.
  */
-var Source = /*#__PURE__*/function () {
+var Source =
+/*#__PURE__*/
+function () {
   function Source(body) {
     var name = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'GraphQL request';
     var locationOffset = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {
@@ -31782,7 +31792,9 @@ var _blockString = require("./blockString.mjs");
  * EOF, after which the lexer will repeatedly return the same EOF token
  * whenever called.
  */
-var Lexer = /*#__PURE__*/function () {
+var Lexer =
+/*#__PURE__*/
+function () {
   /**
    * The previously focused non-ignored token.
    */
@@ -32536,7 +32548,9 @@ function parseType(source, options) {
  */
 
 
-var Parser = /*#__PURE__*/function () {
+var Parser =
+/*#__PURE__*/
+function () {
   function Parser(source, options) {
     var sourceObj = (0, _source.isSource)(source) ? source : new _source.Source(source);
     this._lexer = new _lexer.Lexer(sourceObj);
@@ -34859,7 +34873,9 @@ function suggestionList(input, options) {
  */
 
 
-var LexicalDistance = /*#__PURE__*/function () {
+var LexicalDistance =
+/*#__PURE__*/
+function () {
   function LexicalDistance(input) {
     this._input = input;
     this._inputLowerCase = input.toLowerCase();
@@ -35866,7 +35882,9 @@ function undefineIfEmpty(arr) {
  */
 
 
-var GraphQLScalarType = /*#__PURE__*/function () {
+var GraphQLScalarType =
+/*#__PURE__*/
+function () {
   function GraphQLScalarType(config) {
     var _config$parseValue, _config$serialize, _config$parseLiteral;
 
@@ -35969,7 +35987,9 @@ exports.GraphQLScalarType = GraphQLScalarType;
  *
  */
 
-var GraphQLObjectType = /*#__PURE__*/function () {
+var GraphQLObjectType =
+/*#__PURE__*/
+function () {
   function GraphQLObjectType(config) {
     this.name = config.name;
     this.description = config.description;
@@ -36145,7 +36165,9 @@ function isRequiredArgument(arg) {
  */
 
 
-var GraphQLInterfaceType = /*#__PURE__*/function () {
+var GraphQLInterfaceType =
+/*#__PURE__*/
+function () {
   function GraphQLInterfaceType(config) {
     this.name = config.name;
     this.description = config.description;
@@ -36238,7 +36260,9 @@ exports.GraphQLInterfaceType = GraphQLInterfaceType;
  *
  */
 
-var GraphQLUnionType = /*#__PURE__*/function () {
+var GraphQLUnionType =
+/*#__PURE__*/
+function () {
   function GraphQLUnionType(config) {
     this.name = config.name;
     this.description = config.description;
@@ -36499,7 +36523,9 @@ function defineEnumValues(typeName, valueMap) {
  */
 
 
-var GraphQLInputObjectType = /*#__PURE__*/function () {
+var GraphQLInputObjectType =
+/*#__PURE__*/
+function () {
   function GraphQLInputObjectType(config) {
     this.name = config.name;
     this.description = config.description;
@@ -38049,7 +38075,9 @@ function assertDirective(directive) {
  */
 
 
-var GraphQLDirective = /*#__PURE__*/function () {
+var GraphQLDirective =
+/*#__PURE__*/
+function () {
   function GraphQLDirective(config) {
     var _config$isRepeatable, _config$args;
 
@@ -38330,7 +38358,9 @@ function assertSchema(schema) {
  */
 
 
-var GraphQLSchema = /*#__PURE__*/function () {
+var GraphQLSchema =
+/*#__PURE__*/
+function () {
   // Used as a cache for validateSchema().
   function GraphQLSchema(config) {
     var _config$directives; // If this schema was built from a source known to be valid, then it may be
@@ -38672,7 +38702,9 @@ function assertValidSchema(schema) {
   }
 }
 
-var SchemaValidationContext = /*#__PURE__*/function () {
+var SchemaValidationContext =
+/*#__PURE__*/
+function () {
   function SchemaValidationContext(schema) {
     this._errors = [];
     this.schema = schema;
@@ -39224,7 +39256,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * of the current field and type definitions at any point in a GraphQL document
  * AST during a recursive descent by calling `enter(node)` and `leave(node)`.
  */
-var TypeInfo = /*#__PURE__*/function () {
+var TypeInfo =
+/*#__PURE__*/
+function () {
   function TypeInfo(schema, // NOTE: this experimental optional second parameter is only needed in order
   // to support non-spec-compliant code bases. You should never need to use it.
   // It may disappear in the future.
@@ -41854,7 +41888,9 @@ function subfieldConflicts(conflicts, responseName, node1, node2) {
  */
 
 
-var PairSet = /*#__PURE__*/function () {
+var PairSet =
+/*#__PURE__*/
+function () {
   function PairSet() {
     this._data = Object.create(null);
   }
@@ -42525,7 +42561,9 @@ function _inheritsLoose(subClass, superClass) {
  * allowing access to commonly useful contextual information from within a
  * validation rule.
  */
-var ASTValidationContext = /*#__PURE__*/function () {
+var ASTValidationContext =
+/*#__PURE__*/
+function () {
   function ASTValidationContext(ast, onError) {
     this._ast = ast;
     this._fragments = undefined;
@@ -42625,7 +42663,9 @@ var ASTValidationContext = /*#__PURE__*/function () {
 
 exports.ASTValidationContext = ASTValidationContext;
 
-var SDLValidationContext = /*#__PURE__*/function (_ASTValidationContext) {
+var SDLValidationContext =
+/*#__PURE__*/
+function (_ASTValidationContext) {
   _inheritsLoose(SDLValidationContext, _ASTValidationContext);
 
   function SDLValidationContext(ast, schema, onError) {
@@ -42647,7 +42687,9 @@ var SDLValidationContext = /*#__PURE__*/function (_ASTValidationContext) {
 
 exports.SDLValidationContext = SDLValidationContext;
 
-var ValidationContext = /*#__PURE__*/function (_ASTValidationContext2) {
+var ValidationContext =
+/*#__PURE__*/
+function (_ASTValidationContext2) {
   _inheritsLoose(ValidationContext, _ASTValidationContext2);
 
   function ValidationContext(schema, ast, typeInfo, onError) {
@@ -54494,7 +54536,9 @@ function _interopRequireDefault(obj) {
  */
 
 
-var Location = /*#__PURE__*/function () {
+var Location =
+/*#__PURE__*/
+function () {
   /**
    * The character offset at which this Node begins.
    */
@@ -54542,7 +54586,9 @@ exports.Location = Location;
  * within a Source.
  */
 
-var Token = /*#__PURE__*/function () {
+var Token =
+/*#__PURE__*/
+function () {
   /**
    * The kind of Token.
    */
@@ -71875,7 +71921,9 @@ function createReactContext(defaultValue, calculateChangedBits) {
 
   var contextProp = '__create-react-context-' + getUniqueId() + '__';
 
-  var Provider = /*#__PURE__*/function (_Component) {
+  var Provider =
+  /*#__PURE__*/
+  function (_Component) {
     (0, _inheritsLoose2.default)(Provider, _Component);
 
     function Provider() {
@@ -71927,7 +71975,9 @@ function createReactContext(defaultValue, calculateChangedBits) {
 
   Provider.childContextTypes = (_Provider$childContex = {}, _Provider$childContex[contextProp] = _propTypes.default.object.isRequired, _Provider$childContex);
 
-  var Consumer = /*#__PURE__*/function (_Component2) {
+  var Consumer =
+  /*#__PURE__*/
+  function (_Component2) {
     (0, _inheritsLoose2.default)(Consumer, _Component2);
 
     function Consumer() {
@@ -72520,7 +72570,9 @@ var createNamedContext = function createNamedContext(name) {
   return context;
 };
 
-var historyContext = /*#__PURE__*/createNamedContext("Router-History"); // TODO: Replace with React.createContext once we can assume React 16+
+var historyContext =
+/*#__PURE__*/
+createNamedContext("Router-History"); // TODO: Replace with React.createContext once we can assume React 16+
 
 exports.__HistoryContext = historyContext;
 
@@ -72530,14 +72582,18 @@ var createNamedContext$1 = function createNamedContext(name) {
   return context;
 };
 
-var context = /*#__PURE__*/createNamedContext$1("Router");
+var context =
+/*#__PURE__*/
+createNamedContext$1("Router");
 /**
  * The public API for putting history on context.
  */
 
 exports.__RouterContext = context;
 
-var Router = /*#__PURE__*/function (_React$Component) {
+var Router =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(Router, _React$Component);
 
   Router.computeRootMatch = function computeRootMatch(pathname) {
@@ -72630,7 +72686,9 @@ if ("development" !== "production") {
  */
 
 
-var MemoryRouter = /*#__PURE__*/function (_React$Component) {
+var MemoryRouter =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(MemoryRouter, _React$Component);
 
   function MemoryRouter() {
@@ -72673,7 +72731,9 @@ if ("development" !== "production") {
   };
 }
 
-var Lifecycle = /*#__PURE__*/function (_React$Component) {
+var Lifecycle =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(Lifecycle, _React$Component);
 
   function Lifecycle() {
@@ -72919,7 +72979,9 @@ function evalChildrenDev(children, props, path) {
  */
 
 
-var Route = /*#__PURE__*/function (_React$Component) {
+var Route =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(Route, _React$Component);
 
   function Route() {
@@ -73028,7 +73090,9 @@ function noop() {}
  */
 
 
-var StaticRouter = /*#__PURE__*/function (_React$Component) {
+var StaticRouter =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(StaticRouter, _React$Component);
 
   function StaticRouter() {
@@ -73122,7 +73186,9 @@ if ("development" !== "production") {
  */
 
 
-var Switch = /*#__PURE__*/function (_React$Component) {
+var Switch =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(Switch, _React$Component);
 
   function Switch() {
@@ -73379,7 +73445,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * The public API for a <Router> that uses HTML5 history.
  */
-var BrowserRouter = /*#__PURE__*/function (_React$Component) {
+var BrowserRouter =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(BrowserRouter, _React$Component);
 
   function BrowserRouter() {
@@ -73426,7 +73494,9 @@ if ("development" !== "production") {
  */
 
 
-var HashRouter = /*#__PURE__*/function (_React$Component) {
+var HashRouter =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(HashRouter, _React$Component);
 
   function HashRouter() {
@@ -73676,27 +73746,7 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"../node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"../node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"../node_modules/react/index.js","history":"../node_modules/history/esm/history.js","prop-types":"../node_modules/prop-types/index.js","tiny-warning":"../node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"../node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"components/ButtonAsLink.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _styledComponents = _interopRequireDefault(require("styled-components"));
-
-var _templateObject;
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var ButtonAsLink = _styledComponents.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral([" \n    backgound: none;\n    color: #0077cc;\n    padding: 0px;\n    border: none;\n    font: inherit;\n    text-decoration: underline;\n    cursor: pointer;\n\n    :hover,\n    :active {\n        color: #004499;\n    }\n"])));
-
-var _default = ButtonAsLink;
-exports.default = _default;
-},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"components/Header.js":[function(require,module,exports) {
+},{"react-router":"../node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"../node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"../node_modules/react/index.js","history":"../node_modules/history/esm/history.js","prop-types":"../node_modules/prop-types/index.js","tiny-warning":"../node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"../node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"components/Header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -73712,11 +73762,7 @@ var _client = require("@apollo/client");
 
 var _reactRouterDom = require("react-router-dom");
 
-var _apolloCacheInmemory = require("apollo-cache-inmemory");
-
-var _ButtonAsLink = _interopRequireDefault(require("./ButtonAsLink"));
-
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -73732,32 +73778,18 @@ var UserState = _styledComponents.default.div(_templateObject4 || (_templateObje
 
 var Header = function Header(props) {
   var _useQuery = (0, _client.useQuery)(IS_LOGGED_IN),
-      data = _useQuery.data,
-      client = _useQuery.client;
+      data = _useQuery.data;
 
-  return /*#__PURE__*/_react.default.createElement(HeaderBar, null, /*#__PURE__*/_react.default.createElement(LogoText, null, "Notedly"), /*#__PURE__*/_react.default.createElement(UserState, null, data.isLoggedIn ? /*#__PURE__*/_react.default.createElement(_ButtonAsLink.default, {
-    onClick: function onClick() {
-      client.writeQuery({
-        query: (0, _client.gql)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n                                query Logged {\n                                    isLoggedIn\n                                }\n                            "]))),
-        data: {
-          isLoggedIn: false
-        }
-      });
-      localStorage.removeItem('token'); //client.resetStore();
-
-      props.history.push('/');
-    }
-  }, "Log Out") : /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  return _react.default.createElement(HeaderBar, null, _react.default.createElement(LogoText, null, "Notedly"), _react.default.createElement(UserState, null, data.isLoggedIn ? _react.default.createElement("p", null, "Log Out") : _react.default.createElement("p", null, _react.default.createElement(_reactRouterDom.Link, {
     to: '/signin'
-  }, "Sign In"), " or", ' ', /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, "Sign In"), " or", ' ', _react.default.createElement(_reactRouterDom.Link, {
     to: '/signup'
   }, "Sign Up"))));
 };
 
-var _default = (0, _reactRouterDom.withRouter)(Header);
-
+var _default = Header;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","@apollo/client":"../node_modules/@apollo/client/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","apollo-cache-inmemory":"../node_modules/apollo-cache-inmemory/lib/bundle.esm.js","./ButtonAsLink":"components/ButtonAsLink.js"}],"components/Navigation.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","@apollo/client":"../node_modules/@apollo/client/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js"}],"components/Navigation.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -73782,11 +73814,11 @@ var Nav = _styledComponents.default.nav(_templateObject || (_templateObject = _t
 var NavList = _styledComponents.default.ul(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    margin: 0;\n    padding: 0;\n    list-style: none;\n    line-height: 2;\n\n    a {\n        text-decoration: none;\n        font-weight: bold;\n        font-size: 1.1em;\n        color: #333;\n    }\n\n    a:visited {\n        color: #333;\n    }\n\n    a:hover,\n    a:focus {\n        color: #0077cc;\n    }\n"])));
 
 var Navigation = function Navigation() {
-  return /*#__PURE__*/_react.default.createElement(Nav, null, /*#__PURE__*/_react.default.createElement(NavList, null, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  return _react.default.createElement(Nav, null, _react.default.createElement(NavList, null, _react.default.createElement("li", null, _react.default.createElement(_reactRouterDom.Link, {
     to: "/"
-  }, "Home")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, "Home")), _react.default.createElement("li", null, _react.default.createElement(_reactRouterDom.Link, {
     to: "/mynotes"
-  }, "My Notes")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, "My Notes")), _react.default.createElement("li", null, _react.default.createElement(_reactRouterDom.Link, {
     to: "/favorites"
   }, "Favorites"))));
 };
@@ -73821,7 +73853,7 @@ var Main = _styledComponents.default.main(_templateObject2 || (_templateObject2 
 
 var Layout = function Layout(_ref) {
   var children = _ref.children;
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement(Wrapper, null, /*#__PURE__*/_react.default.createElement(_Navigation.default, null), /*#__PURE__*/_react.default.createElement(Main, null, children)));
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_Header.default, null), _react.default.createElement(Wrapper, null, _react.default.createElement(_Navigation.default, null), _react.default.createElement(Main, null, children)));
 };
 
 var _default = Layout;
@@ -101211,7 +101243,7 @@ var UserActions = _styledComponents.default.div(_templateObject4 || (_templateOb
 
 var Note = function Note(_ref) {
   var note = _ref.note;
-  return /*#__PURE__*/_react.default.createElement(StyledNote, null, /*#__PURE__*/_react.default.createElement(MetaData, null, /*#__PURE__*/_react.default.createElement(MetaInfo, null, /*#__PURE__*/_react.default.createElement("em", null, "by"), " ", note.author.username, " ", /*#__PURE__*/_react.default.createElement("br", null), (0, _dateFns.format)(new Date(note.createdAt), 'MM dd yyyy')), /*#__PURE__*/_react.default.createElement(UserActions, null, /*#__PURE__*/_react.default.createElement("em", null, "Favorites:"), " ", note.favoriteCount)), /*#__PURE__*/_react.default.createElement(_reactMarkdown.default, {
+  return _react.default.createElement(StyledNote, null, _react.default.createElement(MetaData, null, _react.default.createElement(MetaInfo, null, _react.default.createElement("em", null, "by"), " ", note.author.username, " ", _react.default.createElement("br", null), (0, _dateFns.format)(new Date(note.createdAt), 'MM dd yyyy')), _react.default.createElement(UserActions, null, _react.default.createElement("em", null, "Favorites:"), " ", note.favoriteCount)), _react.default.createElement(_reactMarkdown.default, {
     source: note.content
   }));
 };
@@ -101244,12 +101276,12 @@ var NoteWrapper = _styledComponents.default.div(_templateObject || (_templateObj
 
 var NoteFeed = function NoteFeed(_ref) {
   var notes = _ref.notes;
-  return /*#__PURE__*/_react.default.createElement("div", null, notes.map(function (note) {
-    return /*#__PURE__*/_react.default.createElement(NoteWrapper, {
+  return _react.default.createElement("div", null, notes.map(function (note) {
+    return _react.default.createElement(NoteWrapper, {
       key: note.id
-    }, /*#__PURE__*/_react.default.createElement(_Note.default, {
+    }, _react.default.createElement(_Note.default, {
       note: note
-    }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    }), _react.default.createElement(_reactRouterDom.Link, {
       to: "note/".concat(note.id)
     }, "Permalink"));
   }));
@@ -101320,11 +101352,11 @@ var Home = function Home() {
       error = _useQuery.error,
       fetchMore = _useQuery.fetchMore;
 
-  if (loading) return /*#__PURE__*/_react.default.createElement("p", null, "Loading...");
-  if (error) return /*#__PURE__*/_react.default.createElement("p", null, "Error!");
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_NoteFeed.default, {
+  if (loading) return _react.default.createElement("p", null, "Loading...");
+  if (error) return _react.default.createElement("p", null, "Error!");
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_NoteFeed.default, {
     notes: data.noteFeed.notes
-  }), data.noteFeed.hasNextPage && /*#__PURE__*/_react.default.createElement(_Button.default, {
+  }), data.noteFeed.hasNextPage && _react.default.createElement(_Button.default, {
     onClick: function onClick() {
       return fetchMore({
         variables: {
@@ -101366,7 +101398,7 @@ var MyNotes = function MyNotes() {
   (0, _react.useEffect)(function () {
     document.title = 'My Notes - Notedly';
   });
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Notedly"), /*#__PURE__*/_react.default.createElement("p", null, "These are my notes"));
+  return _react.default.createElement("div", null, _react.default.createElement("h1", null, "Notedly"), _react.default.createElement("p", null, "These are my notes"));
 };
 
 var _default = MyNotes;
@@ -101389,7 +101421,7 @@ var Favorites = function Favorites() {
   (0, _react.useEffect)(function () {
     document.title = 'Favorites - Notedly';
   });
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Notedly"), /*#__PURE__*/_react.default.createElement("p", null, "These are my favorites"));
+  return _react.default.createElement("div", null, _react.default.createElement("h1", null, "Notedly"), _react.default.createElement("p", null, "These are my favorites"));
 };
 
 var _default = Favorites;
@@ -101428,16 +101460,16 @@ var NotePage = function NotePage(props) {
       error = _useQuery.error,
       data = _useQuery.data;
 
-  if (loading) return /*#__PURE__*/_react.default.createElement("p", null, "Loading...");
-  if (error) return /*#__PURE__*/_react.default.createElement("p", null, "Note nor found");
-  return /*#__PURE__*/_react.default.createElement(_Note.default, {
+  if (loading) return _react.default.createElement("p", null, "Loading...");
+  if (error) return _react.default.createElement("p", null, "Note nor found");
+  return _react.default.createElement(_Note.default, {
     note: data.note
   });
 };
 
 var _default = NotePage;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/Note":"components/Note.js"}],"pages/signup.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/Note":"components/Note.js"}],"components/UserForm.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -101447,11 +101479,11 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _client = require("@apollo/client");
+var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _Button = _interopRequireDefault(require("../components/Button"));
+var _Button = _interopRequireDefault(require("./Button"));
 
-var _templateObject, _templateObject2, _templateObject3, _templateObject4;
+var _templateObject, _templateObject2;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -101479,11 +101511,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var SIGNUP_USER = (0, _client.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    mutation signUp($email: String!, $username: String!, $password: String!){\n        signUp(email: $email, username: $username, password: $password)\n    }\n"])));
-var Wrapper = styled.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    border 1px solid #f5f4f0;\n    max-width: 500px;\n    padding: 1em;\n    margin: 0 auto;\n"])));
-var Form = styled.form(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    label,\n    input {\n        display: block;\n        line-height: 2em;\n    }\n    input {\n        width: 100%;\n        margin-bottom: 1em;\n    }\n"])));
+var Wrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    border 1px solid #f5f4f0;\n    max-width: 500px;\n    padding: 1em;\n    margin: 0 auto;\n"])));
 
-var SignUp = function SignUp(props) {
+var Form = _styledComponents.default.form(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    label,\n    input {\n        display: block;\n        line-height: 2em;\n    }\n    input {\n        width: 100%;\n        margin-bottom: 1em;\n    }\n"])));
+
+var UserForm = function UserForm(props) {
   var _useState = (0, _react.useState)(),
       _useState2 = _slicedToArray(_useState, 2),
       values = _useState2[0],
@@ -101493,6 +101525,86 @@ var SignUp = function SignUp(props) {
     setValues(_objectSpread(_objectSpread({}, values), {}, _defineProperty({}, event.target.name, event.target.value)));
   };
 
+  return _react.default.createElement(Wrapper, null, props.formType === 'signup' ? _react.default.createElement("h2", null, "Sign Up") : _react.default.createElement("h2", null, "Sign In"), _react.default.createElement(Form, {
+    onSubmit: function onSubmit(e) {
+      e.preventDefault();
+      props.action({
+        variables: _objectSpread({}, values)
+      });
+    }
+  }, props.formType === 'signup' && _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("label", {
+    htmlFor: "username"
+  }, "Username:"), _react.default.createElement("input", {
+    required: true,
+    type: "text",
+    id: "username",
+    name: "username",
+    placeholder: "username",
+    onChange: onChange
+  })), _react.default.createElement("label", {
+    htmlFor: "email"
+  }, "Email:"), _react.default.createElement("input", {
+    required: true,
+    type: "email",
+    id: "email",
+    name: "email",
+    placeholder: "Email",
+    onChange: onChange
+  }), _react.default.createElement("label", {
+    htmlFor: "password"
+  }, "Password:"), _react.default.createElement("input", {
+    required: true,
+    type: "password",
+    id: "password",
+    name: "password",
+    placeholder: "Password",
+    onChange: onChange
+  }), _react.default.createElement(_Button.default, {
+    type: "submit"
+  }, "Submit")));
+};
+
+var _default = UserForm;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./Button":"components/Button.js"}],"pages/signup.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _client = require("@apollo/client");
+
+var _UserForm = _interopRequireDefault(require("../components/UserForm"));
+
+var _templateObject;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var SIGNUP_USER = (0, _client.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    mutation signUp($email: String!, $username: String!, $password: String!){\n        signUp(email: $email, username: $username, password: $password)\n    }\n"])));
+
+var SignUp = function SignUp(props) {
   (0, _react.useEffect)(function () {
     document.title = 'Sign Up - Notedly';
   });
@@ -101501,8 +101613,7 @@ var SignUp = function SignUp(props) {
   var _useMutation = (0, _client.useMutation)(SIGNUP_USER, {
     onCompleted: function onCompleted(data) {
       localStorage.setItem('token', data.signUp);
-      client.writeQuery({
-        query: (0, _client.gql)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n                    query Logged {\n                        isLoggedIn\n                    }\n                "]))),
+      client.writeData({
         data: {
           isLoggedIn: true
         }
@@ -101516,48 +101627,15 @@ var SignUp = function SignUp(props) {
       loading = _useMutation2$.loading,
       error = _useMutation2$.error;
 
-  return /*#__PURE__*/_react.default.createElement(Wrapper, null, /*#__PURE__*/_react.default.createElement("h2", null, "Sign Up"), /*#__PURE__*/_react.default.createElement(Form, {
-    onSubmit: function onSubmit(event) {
-      event.preventDefault();
-      signUp({
-        variables: _objectSpread({}, values)
-      });
-    }
-  }, /*#__PURE__*/_react.default.createElement("label", {
-    htmlFor: "username"
-  }, "Username:"), /*#__PURE__*/_react.default.createElement("input", {
-    required: true,
-    type: "text",
-    id: "username",
-    name: "username",
-    placeholder: "username",
-    onChange: onChange
-  }), /*#__PURE__*/_react.default.createElement("label", {
-    htmlFor: "email"
-  }, "Email:"), /*#__PURE__*/_react.default.createElement("input", {
-    required: true,
-    type: "email",
-    id: "email",
-    name: "email",
-    placeholder: "Email",
-    onChange: onChange
-  }), /*#__PURE__*/_react.default.createElement("label", {
-    htmlFor: "password"
-  }, "Password:"), /*#__PURE__*/_react.default.createElement("input", {
-    required: true,
-    type: "password",
-    id: "password",
-    name: "password",
-    placeholder: "Password",
-    onChange: onChange
-  }), /*#__PURE__*/_react.default.createElement(_Button.default, {
-    type: "submit"
-  }, "Submit")));
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_UserForm.default, {
+    action: signUp,
+    formType: "signup"
+  }), loading && _react.default.createElement("p", null, "Loading..."), error && _react.default.createElement("p", null, "Error creating an account!"));
 };
 
 var _default = SignUp;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/Button":"components/Button.js"}],"pages/signin.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/UserForm":"components/UserForm.js"}],"pages/signin.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -101575,7 +101653,7 @@ var SignIn = function SignIn(props) {
   (0, _react.useEffect)(function () {
     document.title = 'Sign In - Notedly';
   });
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, "Sign in page"));
+  return _react.default.createElement("div", null, _react.default.createElement("p", null, "Sign in page"));
 };
 
 var _default = SignIn;
@@ -101609,23 +101687,23 @@ var _signin = _interopRequireDefault(require("./signin"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Pages = function Pages() {
-  return /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_Layout.default, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  return _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement(_Layout.default, null, _react.default.createElement(_reactRouterDom.Route, {
     exact: true,
     path: "/",
     component: _home.default
-  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  }), _react.default.createElement(_reactRouterDom.Route, {
     path: "/mynotes",
     component: _mynotes.default
-  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  }), _react.default.createElement(_reactRouterDom.Route, {
     path: "/favorites",
     component: _favorites.default
-  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  }), _react.default.createElement(_reactRouterDom.Route, {
     path: "/note/:id",
     component: _note.default
-  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  }), _react.default.createElement(_reactRouterDom.Route, {
     path: "/signup",
     component: _signup.default
-  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  }), _react.default.createElement(_reactRouterDom.Route, {
     path: "/signin",
     component: _signin.default
   })));
@@ -101683,21 +101761,16 @@ var data = {
 cache.writeData({
   data: data
 }); // write the cache data after cache is reset
-
-client.onResetStore(function () {
-  return cache.writeData({
-    data: data
-  });
-});
+//client.onResetStore(() => cache.writeData({ data }));
 
 var App = function App() {
-  return /*#__PURE__*/_react.default.createElement(_client.ApolloProvider, {
+  return _react.default.createElement(_client.ApolloProvider, {
     client: client
-  }, /*#__PURE__*/_react.default.createElement(_GlobalStyle.default, null), /*#__PURE__*/_react.default.createElement(_pages.default, null));
+  }, _react.default.createElement(_GlobalStyle.default, null), _react.default.createElement(_pages.default, null));
 }; //to render our application within the element with an ID of root 
 
 
-_reactDom.default.render( /*#__PURE__*/_react.default.createElement(App, null), document.getElementById('root'));
+_reactDom.default.render(_react.default.createElement(App, null), document.getElementById('root'));
 },{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","apollo-cache-inmemory":"../node_modules/apollo-cache-inmemory/lib/bundle.esm.js","apollo-link-context":"../node_modules/apollo-link-context/lib/bundle.esm.js","/components/GlobalStyle":"components/GlobalStyle.js","/pages":"pages/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -101726,7 +101799,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50220" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60524" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -101757,9 +101830,8 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
         assetsToAccept.forEach(function (v) {
           hmrAcceptRun(v[0], v[1]);
         });
-      } else if (location.reload) {
-        // `location` global exists in a web worker context but lacks `.reload()` function.
-        location.reload();
+      } else {
+        window.location.reload();
       }
     }
 
