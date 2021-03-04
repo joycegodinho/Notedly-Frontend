@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useQuery, gql } from '@apollo/client';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+
+import ButtonAsLink from './ButtonAsLink';
 
 const IS_LOGGED_IN = gql`
     {
@@ -32,24 +34,45 @@ const UserState = styled.div`
 `;
 
 const Header = props => {
-    const { data } = useQuery(IS_LOGGED_IN);
+    // query hook for user logged in state
+    const { data, client } = useQuery(IS_LOGGED_IN);
+  
     return (
-        <HeaderBar>
-            <LogoText>Notedly</LogoText>
-            <UserState>
-                {data.isLoggedIn ? (
-                    <p>Log Out</p>
-                ) : (
-                    <p>
-                        <Link to={'/signin'}>Sign In</Link> or{' '}
-                        <Link to={'/signup'}>Sign Up</Link>
-                    </p>
-                )}
-            </UserState> 
-
-
-        </HeaderBar>
+      <HeaderBar>
+        <LogoText>Notedly</LogoText>
+        {/* If logged in display a log out link, else display sign in options */}
+        <UserState>
+          {data.isLoggedIn ? (
+            <ButtonAsLink
+              onClick={() => {
+                // remove the token
+                localStorage.removeItem('token');
+                // clear the application's cache
+                client.resetStore();
+                // update local state
+                client.writeQuery({ 
+                    query: gql`
+                        query Logged {
+                            isLoggedIn
+                        }
+                    `,
+                    data: {isLoggedIn: false}})
+                // redirect the user to the homepage
+                props.history.push('/');
+              }}
+            >
+              Logout
+            </ButtonAsLink>
+          ) : (
+            <p>
+              <Link to={'/signin'}>Sign In</Link> or{' '}
+              <Link to={'/signup'}>Sign Up</Link>
+            </p>
+          )}
+        </UserState>
+      </HeaderBar>
     );
-};
-
-export default Header;
+  };
+  
+  export default withRouter(Header);
+  

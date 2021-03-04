@@ -73746,7 +73746,27 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"../node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"../node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"../node_modules/react/index.js","history":"../node_modules/history/esm/history.js","prop-types":"../node_modules/prop-types/index.js","tiny-warning":"../node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"../node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"components/Header.js":[function(require,module,exports) {
+},{"react-router":"../node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"../node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"../node_modules/react/index.js","history":"../node_modules/history/esm/history.js","prop-types":"../node_modules/prop-types/index.js","tiny-warning":"../node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"../node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"components/ButtonAsLink.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _templateObject;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var ButtonAsLink = _styledComponents.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  background: none;\n  color: #0077cc;\n  border: none;\n  padding: 0;\n  font: inherit;\n  text-decoration: underline;\n  cursor: pointer;\n\n  :hover,\n  :active {\n    color: #004499;\n  }\n"])));
+
+var _default = ButtonAsLink;
+exports.default = _default;
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"components/Header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -73762,7 +73782,9 @@ var _client = require("@apollo/client");
 
 var _reactRouterDom = require("react-router-dom");
 
-var _templateObject, _templateObject2, _templateObject3, _templateObject4;
+var _ButtonAsLink = _interopRequireDefault(require("./ButtonAsLink"));
+
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -73777,19 +73799,38 @@ var LogoText = _styledComponents.default.h1(_templateObject3 || (_templateObject
 var UserState = _styledComponents.default.div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    margin-left: auto;\n"])));
 
 var Header = function Header(props) {
+  // query hook for user logged in state
   var _useQuery = (0, _client.useQuery)(IS_LOGGED_IN),
-      data = _useQuery.data;
+      data = _useQuery.data,
+      client = _useQuery.client;
 
-  return _react.default.createElement(HeaderBar, null, _react.default.createElement(LogoText, null, "Notedly"), _react.default.createElement(UserState, null, data.isLoggedIn ? _react.default.createElement("p", null, "Log Out") : _react.default.createElement("p", null, _react.default.createElement(_reactRouterDom.Link, {
+  return _react.default.createElement(HeaderBar, null, _react.default.createElement(LogoText, null, "Notedly"), _react.default.createElement(UserState, null, data.isLoggedIn ? _react.default.createElement(_ButtonAsLink.default, {
+    onClick: function onClick() {
+      // remove the token
+      localStorage.removeItem('token'); // clear the application's cache
+
+      client.resetStore(); // update local state
+
+      client.writeQuery({
+        query: (0, _client.gql)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n                        query Logged {\n                            isLoggedIn\n                        }\n                    "]))),
+        data: {
+          isLoggedIn: false
+        }
+      }); // redirect the user to the homepage
+
+      props.history.push('/');
+    }
+  }, "Logout") : _react.default.createElement("p", null, _react.default.createElement(_reactRouterDom.Link, {
     to: '/signin'
   }, "Sign In"), " or", ' ', _react.default.createElement(_reactRouterDom.Link, {
     to: '/signup'
   }, "Sign Up"))));
 };
 
-var _default = Header;
+var _default = (0, _reactRouterDom.withRouter)(Header);
+
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","@apollo/client":"../node_modules/@apollo/client/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js"}],"components/Navigation.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","@apollo/client":"../node_modules/@apollo/client/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./ButtonAsLink":"components/ButtonAsLink.js"}],"components/Navigation.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -101580,7 +101621,7 @@ var _client = require("@apollo/client");
 
 var _UserForm = _interopRequireDefault(require("../components/UserForm"));
 
-var _templateObject;
+var _templateObject, _templateObject2;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -101613,7 +101654,8 @@ var SignUp = function SignUp(props) {
   var _useMutation = (0, _client.useMutation)(SIGNUP_USER, {
     onCompleted: function onCompleted(data) {
       localStorage.setItem('token', data.signUp);
-      client.writeData({
+      client.writeQuery({
+        query: (0, _client.gql)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n                    query Logged {\n                        isLoggedIn\n                    }\n                "]))),
         data: {
           isLoggedIn: true
         }
@@ -101645,20 +101687,67 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _client = require("@apollo/client");
+
+var _UserForm = _interopRequireDefault(require("../components/UserForm"));
+
+var _templateObject, _templateObject2;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var SIGNIN_USER = (0, _client.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    mutation signIn($email: String!, $username: String!, $password: String!){\n        signIn(email: $email, username: $username, password: $password)\n    }\n"])));
 
 var SignIn = function SignIn(props) {
   (0, _react.useEffect)(function () {
     document.title = 'Sign In - Notedly';
   });
-  return _react.default.createElement("div", null, _react.default.createElement("p", null, "Sign in page"));
+  var client = (0, _client.useApolloClient)();
+
+  var _useMutation = (0, _client.useMutation)(SIGNIN_USER, {
+    onCompleted: function onCompleted(data) {
+      localStorage.setItem('token', data.signIn);
+      client.writeQuery({
+        query: (0, _client.gql)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n                    query Logged {\n                        isLoggedIn\n                    }\n                "]))),
+        data: {
+          isLoggedIn: true
+        }
+      });
+      props.history.push('/');
+    }
+  }),
+      _useMutation2 = _slicedToArray(_useMutation, 2),
+      signIn = _useMutation2[0],
+      _useMutation2$ = _useMutation2[1],
+      loading = _useMutation2$.loading,
+      error = _useMutation2$.error;
+
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_UserForm.default, {
+    action: signIn,
+    formType: "signIn"
+  }), loading && _react.default.createElement("p", null, "Loading..."), error && _react.default.createElement("p", null, "Error signin in!"));
 };
 
 var _default = SignIn;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"pages/index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/UserForm":"components/UserForm.js"}],"pages/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -101761,7 +101850,12 @@ var data = {
 cache.writeData({
   data: data
 }); // write the cache data after cache is reset
-//client.onResetStore(() => cache.writeData({ data }));
+
+client.onResetStore(function () {
+  return cache.writeData({
+    data: data
+  });
+});
 
 var App = function App() {
   return _react.default.createElement(_client.ApolloProvider, {
@@ -101799,7 +101893,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60524" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61296" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
