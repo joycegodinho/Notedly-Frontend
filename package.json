@@ -13,23 +13,23 @@
   "license": "ISC",
   "dependencies": {
     "@apollo/client": "^3.3.11",
+    "@babel/template": "^7.12.13",
     "@types/react": "^17.0.2",
+    "apollo-cache-inmemory": "^1.6.6",
     "apollo-link-context": "^1.0.20",
     "components": "^0.1.0",
     "date-fns": "^2.18.0",
     "graphql": "^15.5.0",
     "normalize.css": "^8.0.1",
-    "parcel-bundler": "^1.12.4",
     "re": "^0.1.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-markdown": "^5.0.3",
     "react-router-dom": "^5.2.0",
-    "st": "^2.0.0",
-    "styled": "^1.0.0",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
-    "graphql-request": "^3.4.0"
+    "graphql-request": "^3.4.0",
+    "parcel-bundler": "^1.12.4"
   }
 }
