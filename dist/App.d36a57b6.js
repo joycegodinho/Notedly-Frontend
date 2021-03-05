@@ -73861,7 +73861,9 @@ var Navigation = function Navigation() {
     to: "/mynotes"
   }, "My Notes")), _react.default.createElement("li", null, _react.default.createElement(_reactRouterDom.Link, {
     to: "/favorites"
-  }, "Favorites"))));
+  }, "Favorites")), _react.default.createElement("li", null, _react.default.createElement(_reactRouterDom.Link, {
+    to: "/new"
+  }, "New"))));
 };
 
 var _default = Navigation;
@@ -101252,7 +101254,148 @@ Object.keys(_index199).forEach(function (key) {
 });
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./add/index.js":"../node_modules/date-fns/esm/add/index.js","./addBusinessDays/index.js":"../node_modules/date-fns/esm/addBusinessDays/index.js","./addDays/index.js":"../node_modules/date-fns/esm/addDays/index.js","./addHours/index.js":"../node_modules/date-fns/esm/addHours/index.js","./addISOWeekYears/index.js":"../node_modules/date-fns/esm/addISOWeekYears/index.js","./addMilliseconds/index.js":"../node_modules/date-fns/esm/addMilliseconds/index.js","./addMinutes/index.js":"../node_modules/date-fns/esm/addMinutes/index.js","./addMonths/index.js":"../node_modules/date-fns/esm/addMonths/index.js","./addQuarters/index.js":"../node_modules/date-fns/esm/addQuarters/index.js","./addSeconds/index.js":"../node_modules/date-fns/esm/addSeconds/index.js","./addWeeks/index.js":"../node_modules/date-fns/esm/addWeeks/index.js","./addYears/index.js":"../node_modules/date-fns/esm/addYears/index.js","./areIntervalsOverlapping/index.js":"../node_modules/date-fns/esm/areIntervalsOverlapping/index.js","./closestIndexTo/index.js":"../node_modules/date-fns/esm/closestIndexTo/index.js","./closestTo/index.js":"../node_modules/date-fns/esm/closestTo/index.js","./compareAsc/index.js":"../node_modules/date-fns/esm/compareAsc/index.js","./compareDesc/index.js":"../node_modules/date-fns/esm/compareDesc/index.js","./differenceInBusinessDays/index.js":"../node_modules/date-fns/esm/differenceInBusinessDays/index.js","./differenceInCalendarDays/index.js":"../node_modules/date-fns/esm/differenceInCalendarDays/index.js","./differenceInCalendarISOWeekYears/index.js":"../node_modules/date-fns/esm/differenceInCalendarISOWeekYears/index.js","./differenceInCalendarISOWeeks/index.js":"../node_modules/date-fns/esm/differenceInCalendarISOWeeks/index.js","./differenceInCalendarMonths/index.js":"../node_modules/date-fns/esm/differenceInCalendarMonths/index.js","./differenceInCalendarQuarters/index.js":"../node_modules/date-fns/esm/differenceInCalendarQuarters/index.js","./differenceInCalendarWeeks/index.js":"../node_modules/date-fns/esm/differenceInCalendarWeeks/index.js","./differenceInCalendarYears/index.js":"../node_modules/date-fns/esm/differenceInCalendarYears/index.js","./differenceInDays/index.js":"../node_modules/date-fns/esm/differenceInDays/index.js","./differenceInHours/index.js":"../node_modules/date-fns/esm/differenceInHours/index.js","./differenceInISOWeekYears/index.js":"../node_modules/date-fns/esm/differenceInISOWeekYears/index.js","./differenceInMilliseconds/index.js":"../node_modules/date-fns/esm/differenceInMilliseconds/index.js","./differenceInMinutes/index.js":"../node_modules/date-fns/esm/differenceInMinutes/index.js","./differenceInMonths/index.js":"../node_modules/date-fns/esm/differenceInMonths/index.js","./differenceInQuarters/index.js":"../node_modules/date-fns/esm/differenceInQuarters/index.js","./differenceInSeconds/index.js":"../node_modules/date-fns/esm/differenceInSeconds/index.js","./differenceInWeeks/index.js":"../node_modules/date-fns/esm/differenceInWeeks/index.js","./differenceInYears/index.js":"../node_modules/date-fns/esm/differenceInYears/index.js","./eachDayOfInterval/index.js":"../node_modules/date-fns/esm/eachDayOfInterval/index.js","./eachHourOfInterval/index.js":"../node_modules/date-fns/esm/eachHourOfInterval/index.js","./eachMonthOfInterval/index.js":"../node_modules/date-fns/esm/eachMonthOfInterval/index.js","./eachQuarterOfInterval/index.js":"../node_modules/date-fns/esm/eachQuarterOfInterval/index.js","./eachWeekOfInterval/index.js":"../node_modules/date-fns/esm/eachWeekOfInterval/index.js","./eachWeekendOfInterval/index.js":"../node_modules/date-fns/esm/eachWeekendOfInterval/index.js","./eachWeekendOfMonth/index.js":"../node_modules/date-fns/esm/eachWeekendOfMonth/index.js","./eachWeekendOfYear/index.js":"../node_modules/date-fns/esm/eachWeekendOfYear/index.js","./eachYearOfInterval/index.js":"../node_modules/date-fns/esm/eachYearOfInterval/index.js","./endOfDay/index.js":"../node_modules/date-fns/esm/endOfDay/index.js","./endOfDecade/index.js":"../node_modules/date-fns/esm/endOfDecade/index.js","./endOfHour/index.js":"../node_modules/date-fns/esm/endOfHour/index.js","./endOfISOWeek/index.js":"../node_modules/date-fns/esm/endOfISOWeek/index.js","./endOfISOWeekYear/index.js":"../node_modules/date-fns/esm/endOfISOWeekYear/index.js","./endOfMinute/index.js":"../node_modules/date-fns/esm/endOfMinute/index.js","./endOfMonth/index.js":"../node_modules/date-fns/esm/endOfMonth/index.js","./endOfQuarter/index.js":"../node_modules/date-fns/esm/endOfQuarter/index.js","./endOfSecond/index.js":"../node_modules/date-fns/esm/endOfSecond/index.js","./endOfToday/index.js":"../node_modules/date-fns/esm/endOfToday/index.js","./endOfTomorrow/index.js":"../node_modules/date-fns/esm/endOfTomorrow/index.js","./endOfWeek/index.js":"../node_modules/date-fns/esm/endOfWeek/index.js","./endOfYear/index.js":"../node_modules/date-fns/esm/endOfYear/index.js","./endOfYesterday/index.js":"../node_modules/date-fns/esm/endOfYesterday/index.js","./format/index.js":"../node_modules/date-fns/esm/format/index.js","./formatDistance/index.js":"../node_modules/date-fns/esm/formatDistance/index.js","./formatDistanceStrict/index.js":"../node_modules/date-fns/esm/formatDistanceStrict/index.js","./formatDistanceToNow/index.js":"../node_modules/date-fns/esm/formatDistanceToNow/index.js","./formatDistanceToNowStrict/index.js":"../node_modules/date-fns/esm/formatDistanceToNowStrict/index.js","./formatDuration/index.js":"../node_modules/date-fns/esm/formatDuration/index.js","./formatISO/index.js":"../node_modules/date-fns/esm/formatISO/index.js","./formatISO9075/index.js":"../node_modules/date-fns/esm/formatISO9075/index.js","./formatISODuration/index.js":"../node_modules/date-fns/esm/formatISODuration/index.js","./formatRFC3339/index.js":"../node_modules/date-fns/esm/formatRFC3339/index.js","./formatRFC7231/index.js":"../node_modules/date-fns/esm/formatRFC7231/index.js","./formatRelative/index.js":"../node_modules/date-fns/esm/formatRelative/index.js","./fromUnixTime/index.js":"../node_modules/date-fns/esm/fromUnixTime/index.js","./getDate/index.js":"../node_modules/date-fns/esm/getDate/index.js","./getDay/index.js":"../node_modules/date-fns/esm/getDay/index.js","./getDayOfYear/index.js":"../node_modules/date-fns/esm/getDayOfYear/index.js","./getDaysInMonth/index.js":"../node_modules/date-fns/esm/getDaysInMonth/index.js","./getDaysInYear/index.js":"../node_modules/date-fns/esm/getDaysInYear/index.js","./getDecade/index.js":"../node_modules/date-fns/esm/getDecade/index.js","./getHours/index.js":"../node_modules/date-fns/esm/getHours/index.js","./getISODay/index.js":"../node_modules/date-fns/esm/getISODay/index.js","./getISOWeek/index.js":"../node_modules/date-fns/esm/getISOWeek/index.js","./getISOWeekYear/index.js":"../node_modules/date-fns/esm/getISOWeekYear/index.js","./getISOWeeksInYear/index.js":"../node_modules/date-fns/esm/getISOWeeksInYear/index.js","./getMilliseconds/index.js":"../node_modules/date-fns/esm/getMilliseconds/index.js","./getMinutes/index.js":"../node_modules/date-fns/esm/getMinutes/index.js","./getMonth/index.js":"../node_modules/date-fns/esm/getMonth/index.js","./getOverlappingDaysInIntervals/index.js":"../node_modules/date-fns/esm/getOverlappingDaysInIntervals/index.js","./getQuarter/index.js":"../node_modules/date-fns/esm/getQuarter/index.js","./getSeconds/index.js":"../node_modules/date-fns/esm/getSeconds/index.js","./getTime/index.js":"../node_modules/date-fns/esm/getTime/index.js","./getUnixTime/index.js":"../node_modules/date-fns/esm/getUnixTime/index.js","./getWeek/index.js":"../node_modules/date-fns/esm/getWeek/index.js","./getWeekOfMonth/index.js":"../node_modules/date-fns/esm/getWeekOfMonth/index.js","./getWeekYear/index.js":"../node_modules/date-fns/esm/getWeekYear/index.js","./getWeeksInMonth/index.js":"../node_modules/date-fns/esm/getWeeksInMonth/index.js","./getYear/index.js":"../node_modules/date-fns/esm/getYear/index.js","./intervalToDuration/index.js":"../node_modules/date-fns/esm/intervalToDuration/index.js","./intlFormat/index.js":"../node_modules/date-fns/esm/intlFormat/index.js","./isAfter/index.js":"../node_modules/date-fns/esm/isAfter/index.js","./isBefore/index.js":"../node_modules/date-fns/esm/isBefore/index.js","./isDate/index.js":"../node_modules/date-fns/esm/isDate/index.js","./isEqual/index.js":"../node_modules/date-fns/esm/isEqual/index.js","./isExists/index.js":"../node_modules/date-fns/esm/isExists/index.js","./isFirstDayOfMonth/index.js":"../node_modules/date-fns/esm/isFirstDayOfMonth/index.js","./isFriday/index.js":"../node_modules/date-fns/esm/isFriday/index.js","./isFuture/index.js":"../node_modules/date-fns/esm/isFuture/index.js","./isLastDayOfMonth/index.js":"../node_modules/date-fns/esm/isLastDayOfMonth/index.js","./isLeapYear/index.js":"../node_modules/date-fns/esm/isLeapYear/index.js","./isMatch/index.js":"../node_modules/date-fns/esm/isMatch/index.js","./isMonday/index.js":"../node_modules/date-fns/esm/isMonday/index.js","./isPast/index.js":"../node_modules/date-fns/esm/isPast/index.js","./isSameDay/index.js":"../node_modules/date-fns/esm/isSameDay/index.js","./isSameHour/index.js":"../node_modules/date-fns/esm/isSameHour/index.js","./isSameISOWeek/index.js":"../node_modules/date-fns/esm/isSameISOWeek/index.js","./isSameISOWeekYear/index.js":"../node_modules/date-fns/esm/isSameISOWeekYear/index.js","./isSameMinute/index.js":"../node_modules/date-fns/esm/isSameMinute/index.js","./isSameMonth/index.js":"../node_modules/date-fns/esm/isSameMonth/index.js","./isSameQuarter/index.js":"../node_modules/date-fns/esm/isSameQuarter/index.js","./isSameSecond/index.js":"../node_modules/date-fns/esm/isSameSecond/index.js","./isSameWeek/index.js":"../node_modules/date-fns/esm/isSameWeek/index.js","./isSameYear/index.js":"../node_modules/date-fns/esm/isSameYear/index.js","./isSaturday/index.js":"../node_modules/date-fns/esm/isSaturday/index.js","./isSunday/index.js":"../node_modules/date-fns/esm/isSunday/index.js","./isThisHour/index.js":"../node_modules/date-fns/esm/isThisHour/index.js","./isThisISOWeek/index.js":"../node_modules/date-fns/esm/isThisISOWeek/index.js","./isThisMinute/index.js":"../node_modules/date-fns/esm/isThisMinute/index.js","./isThisMonth/index.js":"../node_modules/date-fns/esm/isThisMonth/index.js","./isThisQuarter/index.js":"../node_modules/date-fns/esm/isThisQuarter/index.js","./isThisSecond/index.js":"../node_modules/date-fns/esm/isThisSecond/index.js","./isThisWeek/index.js":"../node_modules/date-fns/esm/isThisWeek/index.js","./isThisYear/index.js":"../node_modules/date-fns/esm/isThisYear/index.js","./isThursday/index.js":"../node_modules/date-fns/esm/isThursday/index.js","./isToday/index.js":"../node_modules/date-fns/esm/isToday/index.js","./isTomorrow/index.js":"../node_modules/date-fns/esm/isTomorrow/index.js","./isTuesday/index.js":"../node_modules/date-fns/esm/isTuesday/index.js","./isValid/index.js":"../node_modules/date-fns/esm/isValid/index.js","./isWednesday/index.js":"../node_modules/date-fns/esm/isWednesday/index.js","./isWeekend/index.js":"../node_modules/date-fns/esm/isWeekend/index.js","./isWithinInterval/index.js":"../node_modules/date-fns/esm/isWithinInterval/index.js","./isYesterday/index.js":"../node_modules/date-fns/esm/isYesterday/index.js","./lastDayOfDecade/index.js":"../node_modules/date-fns/esm/lastDayOfDecade/index.js","./lastDayOfISOWeek/index.js":"../node_modules/date-fns/esm/lastDayOfISOWeek/index.js","./lastDayOfISOWeekYear/index.js":"../node_modules/date-fns/esm/lastDayOfISOWeekYear/index.js","./lastDayOfMonth/index.js":"../node_modules/date-fns/esm/lastDayOfMonth/index.js","./lastDayOfQuarter/index.js":"../node_modules/date-fns/esm/lastDayOfQuarter/index.js","./lastDayOfWeek/index.js":"../node_modules/date-fns/esm/lastDayOfWeek/index.js","./lastDayOfYear/index.js":"../node_modules/date-fns/esm/lastDayOfYear/index.js","./lightFormat/index.js":"../node_modules/date-fns/esm/lightFormat/index.js","./max/index.js":"../node_modules/date-fns/esm/max/index.js","./milliseconds/index.js":"../node_modules/date-fns/esm/milliseconds/index.js","./min/index.js":"../node_modules/date-fns/esm/min/index.js","./parse/index.js":"../node_modules/date-fns/esm/parse/index.js","./parseISO/index.js":"../node_modules/date-fns/esm/parseISO/index.js","./parseJSON/index.js":"../node_modules/date-fns/esm/parseJSON/index.js","./roundToNearestMinutes/index.js":"../node_modules/date-fns/esm/roundToNearestMinutes/index.js","./set/index.js":"../node_modules/date-fns/esm/set/index.js","./setDate/index.js":"../node_modules/date-fns/esm/setDate/index.js","./setDay/index.js":"../node_modules/date-fns/esm/setDay/index.js","./setDayOfYear/index.js":"../node_modules/date-fns/esm/setDayOfYear/index.js","./setHours/index.js":"../node_modules/date-fns/esm/setHours/index.js","./setISODay/index.js":"../node_modules/date-fns/esm/setISODay/index.js","./setISOWeek/index.js":"../node_modules/date-fns/esm/setISOWeek/index.js","./setISOWeekYear/index.js":"../node_modules/date-fns/esm/setISOWeekYear/index.js","./setMilliseconds/index.js":"../node_modules/date-fns/esm/setMilliseconds/index.js","./setMinutes/index.js":"../node_modules/date-fns/esm/setMinutes/index.js","./setMonth/index.js":"../node_modules/date-fns/esm/setMonth/index.js","./setQuarter/index.js":"../node_modules/date-fns/esm/setQuarter/index.js","./setSeconds/index.js":"../node_modules/date-fns/esm/setSeconds/index.js","./setWeek/index.js":"../node_modules/date-fns/esm/setWeek/index.js","./setWeekYear/index.js":"../node_modules/date-fns/esm/setWeekYear/index.js","./setYear/index.js":"../node_modules/date-fns/esm/setYear/index.js","./startOfDay/index.js":"../node_modules/date-fns/esm/startOfDay/index.js","./startOfDecade/index.js":"../node_modules/date-fns/esm/startOfDecade/index.js","./startOfHour/index.js":"../node_modules/date-fns/esm/startOfHour/index.js","./startOfISOWeek/index.js":"../node_modules/date-fns/esm/startOfISOWeek/index.js","./startOfISOWeekYear/index.js":"../node_modules/date-fns/esm/startOfISOWeekYear/index.js","./startOfMinute/index.js":"../node_modules/date-fns/esm/startOfMinute/index.js","./startOfMonth/index.js":"../node_modules/date-fns/esm/startOfMonth/index.js","./startOfQuarter/index.js":"../node_modules/date-fns/esm/startOfQuarter/index.js","./startOfSecond/index.js":"../node_modules/date-fns/esm/startOfSecond/index.js","./startOfToday/index.js":"../node_modules/date-fns/esm/startOfToday/index.js","./startOfTomorrow/index.js":"../node_modules/date-fns/esm/startOfTomorrow/index.js","./startOfWeek/index.js":"../node_modules/date-fns/esm/startOfWeek/index.js","./startOfWeekYear/index.js":"../node_modules/date-fns/esm/startOfWeekYear/index.js","./startOfYear/index.js":"../node_modules/date-fns/esm/startOfYear/index.js","./startOfYesterday/index.js":"../node_modules/date-fns/esm/startOfYesterday/index.js","./sub/index.js":"../node_modules/date-fns/esm/sub/index.js","./subBusinessDays/index.js":"../node_modules/date-fns/esm/subBusinessDays/index.js","./subDays/index.js":"../node_modules/date-fns/esm/subDays/index.js","./subHours/index.js":"../node_modules/date-fns/esm/subHours/index.js","./subISOWeekYears/index.js":"../node_modules/date-fns/esm/subISOWeekYears/index.js","./subMilliseconds/index.js":"../node_modules/date-fns/esm/subMilliseconds/index.js","./subMinutes/index.js":"../node_modules/date-fns/esm/subMinutes/index.js","./subMonths/index.js":"../node_modules/date-fns/esm/subMonths/index.js","./subQuarters/index.js":"../node_modules/date-fns/esm/subQuarters/index.js","./subSeconds/index.js":"../node_modules/date-fns/esm/subSeconds/index.js","./subWeeks/index.js":"../node_modules/date-fns/esm/subWeeks/index.js","./subYears/index.js":"../node_modules/date-fns/esm/subYears/index.js","./toDate/index.js":"../node_modules/date-fns/esm/toDate/index.js","./constants/index.js":"../node_modules/date-fns/esm/constants/index.js"}],"components/Note.js":[function(require,module,exports) {
+},{"./add/index.js":"../node_modules/date-fns/esm/add/index.js","./addBusinessDays/index.js":"../node_modules/date-fns/esm/addBusinessDays/index.js","./addDays/index.js":"../node_modules/date-fns/esm/addDays/index.js","./addHours/index.js":"../node_modules/date-fns/esm/addHours/index.js","./addISOWeekYears/index.js":"../node_modules/date-fns/esm/addISOWeekYears/index.js","./addMilliseconds/index.js":"../node_modules/date-fns/esm/addMilliseconds/index.js","./addMinutes/index.js":"../node_modules/date-fns/esm/addMinutes/index.js","./addMonths/index.js":"../node_modules/date-fns/esm/addMonths/index.js","./addQuarters/index.js":"../node_modules/date-fns/esm/addQuarters/index.js","./addSeconds/index.js":"../node_modules/date-fns/esm/addSeconds/index.js","./addWeeks/index.js":"../node_modules/date-fns/esm/addWeeks/index.js","./addYears/index.js":"../node_modules/date-fns/esm/addYears/index.js","./areIntervalsOverlapping/index.js":"../node_modules/date-fns/esm/areIntervalsOverlapping/index.js","./closestIndexTo/index.js":"../node_modules/date-fns/esm/closestIndexTo/index.js","./closestTo/index.js":"../node_modules/date-fns/esm/closestTo/index.js","./compareAsc/index.js":"../node_modules/date-fns/esm/compareAsc/index.js","./compareDesc/index.js":"../node_modules/date-fns/esm/compareDesc/index.js","./differenceInBusinessDays/index.js":"../node_modules/date-fns/esm/differenceInBusinessDays/index.js","./differenceInCalendarDays/index.js":"../node_modules/date-fns/esm/differenceInCalendarDays/index.js","./differenceInCalendarISOWeekYears/index.js":"../node_modules/date-fns/esm/differenceInCalendarISOWeekYears/index.js","./differenceInCalendarISOWeeks/index.js":"../node_modules/date-fns/esm/differenceInCalendarISOWeeks/index.js","./differenceInCalendarMonths/index.js":"../node_modules/date-fns/esm/differenceInCalendarMonths/index.js","./differenceInCalendarQuarters/index.js":"../node_modules/date-fns/esm/differenceInCalendarQuarters/index.js","./differenceInCalendarWeeks/index.js":"../node_modules/date-fns/esm/differenceInCalendarWeeks/index.js","./differenceInCalendarYears/index.js":"../node_modules/date-fns/esm/differenceInCalendarYears/index.js","./differenceInDays/index.js":"../node_modules/date-fns/esm/differenceInDays/index.js","./differenceInHours/index.js":"../node_modules/date-fns/esm/differenceInHours/index.js","./differenceInISOWeekYears/index.js":"../node_modules/date-fns/esm/differenceInISOWeekYears/index.js","./differenceInMilliseconds/index.js":"../node_modules/date-fns/esm/differenceInMilliseconds/index.js","./differenceInMinutes/index.js":"../node_modules/date-fns/esm/differenceInMinutes/index.js","./differenceInMonths/index.js":"../node_modules/date-fns/esm/differenceInMonths/index.js","./differenceInQuarters/index.js":"../node_modules/date-fns/esm/differenceInQuarters/index.js","./differenceInSeconds/index.js":"../node_modules/date-fns/esm/differenceInSeconds/index.js","./differenceInWeeks/index.js":"../node_modules/date-fns/esm/differenceInWeeks/index.js","./differenceInYears/index.js":"../node_modules/date-fns/esm/differenceInYears/index.js","./eachDayOfInterval/index.js":"../node_modules/date-fns/esm/eachDayOfInterval/index.js","./eachHourOfInterval/index.js":"../node_modules/date-fns/esm/eachHourOfInterval/index.js","./eachMonthOfInterval/index.js":"../node_modules/date-fns/esm/eachMonthOfInterval/index.js","./eachQuarterOfInterval/index.js":"../node_modules/date-fns/esm/eachQuarterOfInterval/index.js","./eachWeekOfInterval/index.js":"../node_modules/date-fns/esm/eachWeekOfInterval/index.js","./eachWeekendOfInterval/index.js":"../node_modules/date-fns/esm/eachWeekendOfInterval/index.js","./eachWeekendOfMonth/index.js":"../node_modules/date-fns/esm/eachWeekendOfMonth/index.js","./eachWeekendOfYear/index.js":"../node_modules/date-fns/esm/eachWeekendOfYear/index.js","./eachYearOfInterval/index.js":"../node_modules/date-fns/esm/eachYearOfInterval/index.js","./endOfDay/index.js":"../node_modules/date-fns/esm/endOfDay/index.js","./endOfDecade/index.js":"../node_modules/date-fns/esm/endOfDecade/index.js","./endOfHour/index.js":"../node_modules/date-fns/esm/endOfHour/index.js","./endOfISOWeek/index.js":"../node_modules/date-fns/esm/endOfISOWeek/index.js","./endOfISOWeekYear/index.js":"../node_modules/date-fns/esm/endOfISOWeekYear/index.js","./endOfMinute/index.js":"../node_modules/date-fns/esm/endOfMinute/index.js","./endOfMonth/index.js":"../node_modules/date-fns/esm/endOfMonth/index.js","./endOfQuarter/index.js":"../node_modules/date-fns/esm/endOfQuarter/index.js","./endOfSecond/index.js":"../node_modules/date-fns/esm/endOfSecond/index.js","./endOfToday/index.js":"../node_modules/date-fns/esm/endOfToday/index.js","./endOfTomorrow/index.js":"../node_modules/date-fns/esm/endOfTomorrow/index.js","./endOfWeek/index.js":"../node_modules/date-fns/esm/endOfWeek/index.js","./endOfYear/index.js":"../node_modules/date-fns/esm/endOfYear/index.js","./endOfYesterday/index.js":"../node_modules/date-fns/esm/endOfYesterday/index.js","./format/index.js":"../node_modules/date-fns/esm/format/index.js","./formatDistance/index.js":"../node_modules/date-fns/esm/formatDistance/index.js","./formatDistanceStrict/index.js":"../node_modules/date-fns/esm/formatDistanceStrict/index.js","./formatDistanceToNow/index.js":"../node_modules/date-fns/esm/formatDistanceToNow/index.js","./formatDistanceToNowStrict/index.js":"../node_modules/date-fns/esm/formatDistanceToNowStrict/index.js","./formatDuration/index.js":"../node_modules/date-fns/esm/formatDuration/index.js","./formatISO/index.js":"../node_modules/date-fns/esm/formatISO/index.js","./formatISO9075/index.js":"../node_modules/date-fns/esm/formatISO9075/index.js","./formatISODuration/index.js":"../node_modules/date-fns/esm/formatISODuration/index.js","./formatRFC3339/index.js":"../node_modules/date-fns/esm/formatRFC3339/index.js","./formatRFC7231/index.js":"../node_modules/date-fns/esm/formatRFC7231/index.js","./formatRelative/index.js":"../node_modules/date-fns/esm/formatRelative/index.js","./fromUnixTime/index.js":"../node_modules/date-fns/esm/fromUnixTime/index.js","./getDate/index.js":"../node_modules/date-fns/esm/getDate/index.js","./getDay/index.js":"../node_modules/date-fns/esm/getDay/index.js","./getDayOfYear/index.js":"../node_modules/date-fns/esm/getDayOfYear/index.js","./getDaysInMonth/index.js":"../node_modules/date-fns/esm/getDaysInMonth/index.js","./getDaysInYear/index.js":"../node_modules/date-fns/esm/getDaysInYear/index.js","./getDecade/index.js":"../node_modules/date-fns/esm/getDecade/index.js","./getHours/index.js":"../node_modules/date-fns/esm/getHours/index.js","./getISODay/index.js":"../node_modules/date-fns/esm/getISODay/index.js","./getISOWeek/index.js":"../node_modules/date-fns/esm/getISOWeek/index.js","./getISOWeekYear/index.js":"../node_modules/date-fns/esm/getISOWeekYear/index.js","./getISOWeeksInYear/index.js":"../node_modules/date-fns/esm/getISOWeeksInYear/index.js","./getMilliseconds/index.js":"../node_modules/date-fns/esm/getMilliseconds/index.js","./getMinutes/index.js":"../node_modules/date-fns/esm/getMinutes/index.js","./getMonth/index.js":"../node_modules/date-fns/esm/getMonth/index.js","./getOverlappingDaysInIntervals/index.js":"../node_modules/date-fns/esm/getOverlappingDaysInIntervals/index.js","./getQuarter/index.js":"../node_modules/date-fns/esm/getQuarter/index.js","./getSeconds/index.js":"../node_modules/date-fns/esm/getSeconds/index.js","./getTime/index.js":"../node_modules/date-fns/esm/getTime/index.js","./getUnixTime/index.js":"../node_modules/date-fns/esm/getUnixTime/index.js","./getWeek/index.js":"../node_modules/date-fns/esm/getWeek/index.js","./getWeekOfMonth/index.js":"../node_modules/date-fns/esm/getWeekOfMonth/index.js","./getWeekYear/index.js":"../node_modules/date-fns/esm/getWeekYear/index.js","./getWeeksInMonth/index.js":"../node_modules/date-fns/esm/getWeeksInMonth/index.js","./getYear/index.js":"../node_modules/date-fns/esm/getYear/index.js","./intervalToDuration/index.js":"../node_modules/date-fns/esm/intervalToDuration/index.js","./intlFormat/index.js":"../node_modules/date-fns/esm/intlFormat/index.js","./isAfter/index.js":"../node_modules/date-fns/esm/isAfter/index.js","./isBefore/index.js":"../node_modules/date-fns/esm/isBefore/index.js","./isDate/index.js":"../node_modules/date-fns/esm/isDate/index.js","./isEqual/index.js":"../node_modules/date-fns/esm/isEqual/index.js","./isExists/index.js":"../node_modules/date-fns/esm/isExists/index.js","./isFirstDayOfMonth/index.js":"../node_modules/date-fns/esm/isFirstDayOfMonth/index.js","./isFriday/index.js":"../node_modules/date-fns/esm/isFriday/index.js","./isFuture/index.js":"../node_modules/date-fns/esm/isFuture/index.js","./isLastDayOfMonth/index.js":"../node_modules/date-fns/esm/isLastDayOfMonth/index.js","./isLeapYear/index.js":"../node_modules/date-fns/esm/isLeapYear/index.js","./isMatch/index.js":"../node_modules/date-fns/esm/isMatch/index.js","./isMonday/index.js":"../node_modules/date-fns/esm/isMonday/index.js","./isPast/index.js":"../node_modules/date-fns/esm/isPast/index.js","./isSameDay/index.js":"../node_modules/date-fns/esm/isSameDay/index.js","./isSameHour/index.js":"../node_modules/date-fns/esm/isSameHour/index.js","./isSameISOWeek/index.js":"../node_modules/date-fns/esm/isSameISOWeek/index.js","./isSameISOWeekYear/index.js":"../node_modules/date-fns/esm/isSameISOWeekYear/index.js","./isSameMinute/index.js":"../node_modules/date-fns/esm/isSameMinute/index.js","./isSameMonth/index.js":"../node_modules/date-fns/esm/isSameMonth/index.js","./isSameQuarter/index.js":"../node_modules/date-fns/esm/isSameQuarter/index.js","./isSameSecond/index.js":"../node_modules/date-fns/esm/isSameSecond/index.js","./isSameWeek/index.js":"../node_modules/date-fns/esm/isSameWeek/index.js","./isSameYear/index.js":"../node_modules/date-fns/esm/isSameYear/index.js","./isSaturday/index.js":"../node_modules/date-fns/esm/isSaturday/index.js","./isSunday/index.js":"../node_modules/date-fns/esm/isSunday/index.js","./isThisHour/index.js":"../node_modules/date-fns/esm/isThisHour/index.js","./isThisISOWeek/index.js":"../node_modules/date-fns/esm/isThisISOWeek/index.js","./isThisMinute/index.js":"../node_modules/date-fns/esm/isThisMinute/index.js","./isThisMonth/index.js":"../node_modules/date-fns/esm/isThisMonth/index.js","./isThisQuarter/index.js":"../node_modules/date-fns/esm/isThisQuarter/index.js","./isThisSecond/index.js":"../node_modules/date-fns/esm/isThisSecond/index.js","./isThisWeek/index.js":"../node_modules/date-fns/esm/isThisWeek/index.js","./isThisYear/index.js":"../node_modules/date-fns/esm/isThisYear/index.js","./isThursday/index.js":"../node_modules/date-fns/esm/isThursday/index.js","./isToday/index.js":"../node_modules/date-fns/esm/isToday/index.js","./isTomorrow/index.js":"../node_modules/date-fns/esm/isTomorrow/index.js","./isTuesday/index.js":"../node_modules/date-fns/esm/isTuesday/index.js","./isValid/index.js":"../node_modules/date-fns/esm/isValid/index.js","./isWednesday/index.js":"../node_modules/date-fns/esm/isWednesday/index.js","./isWeekend/index.js":"../node_modules/date-fns/esm/isWeekend/index.js","./isWithinInterval/index.js":"../node_modules/date-fns/esm/isWithinInterval/index.js","./isYesterday/index.js":"../node_modules/date-fns/esm/isYesterday/index.js","./lastDayOfDecade/index.js":"../node_modules/date-fns/esm/lastDayOfDecade/index.js","./lastDayOfISOWeek/index.js":"../node_modules/date-fns/esm/lastDayOfISOWeek/index.js","./lastDayOfISOWeekYear/index.js":"../node_modules/date-fns/esm/lastDayOfISOWeekYear/index.js","./lastDayOfMonth/index.js":"../node_modules/date-fns/esm/lastDayOfMonth/index.js","./lastDayOfQuarter/index.js":"../node_modules/date-fns/esm/lastDayOfQuarter/index.js","./lastDayOfWeek/index.js":"../node_modules/date-fns/esm/lastDayOfWeek/index.js","./lastDayOfYear/index.js":"../node_modules/date-fns/esm/lastDayOfYear/index.js","./lightFormat/index.js":"../node_modules/date-fns/esm/lightFormat/index.js","./max/index.js":"../node_modules/date-fns/esm/max/index.js","./milliseconds/index.js":"../node_modules/date-fns/esm/milliseconds/index.js","./min/index.js":"../node_modules/date-fns/esm/min/index.js","./parse/index.js":"../node_modules/date-fns/esm/parse/index.js","./parseISO/index.js":"../node_modules/date-fns/esm/parseISO/index.js","./parseJSON/index.js":"../node_modules/date-fns/esm/parseJSON/index.js","./roundToNearestMinutes/index.js":"../node_modules/date-fns/esm/roundToNearestMinutes/index.js","./set/index.js":"../node_modules/date-fns/esm/set/index.js","./setDate/index.js":"../node_modules/date-fns/esm/setDate/index.js","./setDay/index.js":"../node_modules/date-fns/esm/setDay/index.js","./setDayOfYear/index.js":"../node_modules/date-fns/esm/setDayOfYear/index.js","./setHours/index.js":"../node_modules/date-fns/esm/setHours/index.js","./setISODay/index.js":"../node_modules/date-fns/esm/setISODay/index.js","./setISOWeek/index.js":"../node_modules/date-fns/esm/setISOWeek/index.js","./setISOWeekYear/index.js":"../node_modules/date-fns/esm/setISOWeekYear/index.js","./setMilliseconds/index.js":"../node_modules/date-fns/esm/setMilliseconds/index.js","./setMinutes/index.js":"../node_modules/date-fns/esm/setMinutes/index.js","./setMonth/index.js":"../node_modules/date-fns/esm/setMonth/index.js","./setQuarter/index.js":"../node_modules/date-fns/esm/setQuarter/index.js","./setSeconds/index.js":"../node_modules/date-fns/esm/setSeconds/index.js","./setWeek/index.js":"../node_modules/date-fns/esm/setWeek/index.js","./setWeekYear/index.js":"../node_modules/date-fns/esm/setWeekYear/index.js","./setYear/index.js":"../node_modules/date-fns/esm/setYear/index.js","./startOfDay/index.js":"../node_modules/date-fns/esm/startOfDay/index.js","./startOfDecade/index.js":"../node_modules/date-fns/esm/startOfDecade/index.js","./startOfHour/index.js":"../node_modules/date-fns/esm/startOfHour/index.js","./startOfISOWeek/index.js":"../node_modules/date-fns/esm/startOfISOWeek/index.js","./startOfISOWeekYear/index.js":"../node_modules/date-fns/esm/startOfISOWeekYear/index.js","./startOfMinute/index.js":"../node_modules/date-fns/esm/startOfMinute/index.js","./startOfMonth/index.js":"../node_modules/date-fns/esm/startOfMonth/index.js","./startOfQuarter/index.js":"../node_modules/date-fns/esm/startOfQuarter/index.js","./startOfSecond/index.js":"../node_modules/date-fns/esm/startOfSecond/index.js","./startOfToday/index.js":"../node_modules/date-fns/esm/startOfToday/index.js","./startOfTomorrow/index.js":"../node_modules/date-fns/esm/startOfTomorrow/index.js","./startOfWeek/index.js":"../node_modules/date-fns/esm/startOfWeek/index.js","./startOfWeekYear/index.js":"../node_modules/date-fns/esm/startOfWeekYear/index.js","./startOfYear/index.js":"../node_modules/date-fns/esm/startOfYear/index.js","./startOfYesterday/index.js":"../node_modules/date-fns/esm/startOfYesterday/index.js","./sub/index.js":"../node_modules/date-fns/esm/sub/index.js","./subBusinessDays/index.js":"../node_modules/date-fns/esm/subBusinessDays/index.js","./subDays/index.js":"../node_modules/date-fns/esm/subDays/index.js","./subHours/index.js":"../node_modules/date-fns/esm/subHours/index.js","./subISOWeekYears/index.js":"../node_modules/date-fns/esm/subISOWeekYears/index.js","./subMilliseconds/index.js":"../node_modules/date-fns/esm/subMilliseconds/index.js","./subMinutes/index.js":"../node_modules/date-fns/esm/subMinutes/index.js","./subMonths/index.js":"../node_modules/date-fns/esm/subMonths/index.js","./subQuarters/index.js":"../node_modules/date-fns/esm/subQuarters/index.js","./subSeconds/index.js":"../node_modules/date-fns/esm/subSeconds/index.js","./subWeeks/index.js":"../node_modules/date-fns/esm/subWeeks/index.js","./subYears/index.js":"../node_modules/date-fns/esm/subYears/index.js","./toDate/index.js":"../node_modules/date-fns/esm/toDate/index.js","./constants/index.js":"../node_modules/date-fns/esm/constants/index.js"}],"gql/query.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.GET_ME = exports.GET_MY_FAVORITES = exports.GET_MY_NOTES = exports.IS_LOGGED_IN = exports.GET_NOTE = exports.GET_NOTES = void 0;
+
+var _client = require("@apollo/client");
+
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var GET_NOTES = (0, _client.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    query NoteFeed($cursor: String) {\n        noteFeed(cursor: $cursor) {\n            cursor\n            hasNextPage\n            notes {\n                id\n                createdAt\n                content\n                favoriteCount\n                author {\n                    username\n                    id\n                }\n            }\n        }\n    }\n"])));
+exports.GET_NOTES = GET_NOTES;
+var GET_NOTE = (0, _client.gql)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    query note($id: ID!) {\n        note(id: $id) {\n            id\n            createdAt\n            content\n            favoriteCount \n            author {\n                username\n                id\n            }\n        }\n    }\n"])));
+exports.GET_NOTE = GET_NOTE;
+var IS_LOGGED_IN = (0, _client.gql)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    {\n        isLoggedIn @client\n    }\n"])));
+exports.IS_LOGGED_IN = IS_LOGGED_IN;
+var GET_MY_NOTES = (0, _client.gql)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    query me {\n        me {\n            id \n            username\n            notes {\n                id \n                createdAt\n                content\n                favoriteCount\n                author {\n                    username\n                    id\n                }\n            }\n        }\n    }\n"])));
+exports.GET_MY_NOTES = GET_MY_NOTES;
+var GET_MY_FAVORITES = (0, _client.gql)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    query me {\n        me {\n            id \n            username\n            favorites {\n                id \n                createdAt\n                content\n                favoriteCount\n                author {\n                    username\n                    id\n                }\n            }\n        }\n    }\n"])));
+exports.GET_MY_FAVORITES = GET_MY_FAVORITES;
+var GET_ME = (0, _client.gql)(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  query me {\n    me {\n      id\n      favorites {\n        id\n      }\n    }\n  }\n"])));
+exports.GET_ME = GET_ME;
+},{"@apollo/client":"../node_modules/@apollo/client/index.js"}],"gql/mutation.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.DELETE_NOTE = exports.EDIT_NOTE = void 0;
+
+var _client = require("@apollo/client");
+
+var _templateObject, _templateObject2;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var EDIT_NOTE = (0, _client.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  mutation updateNote($id: ID!, $content: String!) {\n    updateNote(id: $id, content: $content) {\n      id\n      content\n      createdAt\n      favoriteCount\n      favoritedBy {\n        id\n        username\n      }\n      author {\n        username\n        id\n      }\n    }\n  }\n"])));
+exports.EDIT_NOTE = EDIT_NOTE;
+var DELETE_NOTE = (0, _client.gql)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  mutation deleteNote($id:ID!) {\n    deleteNote(id: $id)\n  }\n"])));
+exports.DELETE_NOTE = DELETE_NOTE;
+},{"@apollo/client":"../node_modules/@apollo/client/index.js"}],"components/DeleteNote.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _client = require("@apollo/client");
+
+var _reactRouterDom = require("react-router-dom");
+
+var _ButtonAsLink = _interopRequireDefault(require("./ButtonAsLink"));
+
+var _mutation = require("../gql/mutation");
+
+var _query = require("../gql/query");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var DeleteNote = function DeleteNote(props) {
+  var _useMutation = (0, _client.useMutation)(_mutation.DELETE_NOTE, {
+    variables: {
+      id: props.noteId
+    },
+    // refetch the note list queries to update the cache
+    refetchQueries: [{
+      query: _query.GET_MY_NOTES,
+      GET_NOTES: _query.GET_NOTES
+    }],
+    onCompleted: function onCompleted(data) {
+      // redirect the user to the "my notes" page
+      props.history.push('/mynotes');
+    }
+  }),
+      _useMutation2 = _slicedToArray(_useMutation, 1),
+      deleteNote = _useMutation2[0];
+
+  return _react.default.createElement(_ButtonAsLink.default, {
+    onClick: deleteNote
+  }, "Delete Note");
+};
+
+var _default = (0, _reactRouterDom.withRouter)(DeleteNote);
+
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./ButtonAsLink":"components/ButtonAsLink.js","../gql/mutation":"gql/mutation.js","../gql/query":"gql/query.js"}],"components/NoteUser.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _client = require("@apollo/client");
+
+var _reactRouterDom = require("react-router-dom");
+
+var _query = require("../gql/query");
+
+var _DeleteNote = _interopRequireDefault(require("./DeleteNote"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var NoteUser = function NoteUser(props) {
+  var _useQuery = (0, _client.useQuery)(_query.GET_ME),
+      loading = _useQuery.loading,
+      error = _useQuery.error,
+      data = _useQuery.data;
+
+  if (loading) return _react.default.createElement("p", null, "Loading...");
+  if (error) return _react.default.createElement("p", null, "Error");
+  return _react.default.createElement(_react.default.Fragment, null, "Favorites: ", props.note.favoriteCount, _react.default.createElement("br", null), data.me.id === props.note.author.id && _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactRouterDom.Link, {
+    to: "/edit/".concat(props.note.id)
+  }, "Edit"), _react.default.createElement("br", null), _react.default.createElement(_DeleteNote.default, {
+    noteId: props.note.id
+  }), _react.default.createElement("p", null, props.note.id)));
+};
+
+var _default = NoteUser;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../gql/query":"gql/query.js","./DeleteNote":"components/DeleteNote.js"}],"components/Note.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -101267,6 +101410,12 @@ var _reactMarkdown = _interopRequireDefault(require("react-markdown"));
 var _dateFns = require("date-fns");
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _client = require("@apollo/client");
+
+var _NoteUser = _interopRequireDefault(require("./NoteUser"));
+
+var _query = require("../gql/query");
 
 var _templateObject, _templateObject2, _templateObject3, _templateObject4;
 
@@ -101284,14 +101433,24 @@ var UserActions = _styledComponents.default.div(_templateObject4 || (_templateOb
 
 var Note = function Note(_ref) {
   var note = _ref.note;
-  return _react.default.createElement(StyledNote, null, _react.default.createElement(MetaData, null, _react.default.createElement(MetaInfo, null, _react.default.createElement("em", null, "by"), " ", note.author.username, " ", _react.default.createElement("br", null), (0, _dateFns.format)(new Date(note.createdAt), 'MM dd yyyy')), _react.default.createElement(UserActions, null, _react.default.createElement("em", null, "Favorites:"), " ", note.favoriteCount)), _react.default.createElement(_reactMarkdown.default, {
+
+  var _useQuery = (0, _client.useQuery)(_query.IS_LOGGED_IN),
+      loading = _useQuery.loading,
+      error = _useQuery.error,
+      data = _useQuery.data;
+
+  if (loading) return _react.default.createElement("p", null, "Loading...");
+  if (error) return _react.default.createElement("p", null, "Error!");
+  return _react.default.createElement(StyledNote, null, _react.default.createElement(MetaData, null, _react.default.createElement(MetaInfo, null, _react.default.createElement("em", null, "by"), " ", note.author.username, " ", _react.default.createElement("br", null), (0, _dateFns.format)(new Date(note.createdAt), 'MM dd yyyy')), data.isLoggedIn ? _react.default.createElement(UserActions, null, _react.default.createElement(_NoteUser.default, {
+    note: note
+  })) : _react.default.createElement(UserActions, null, _react.default.createElement("em", null, "Favorites:"), " ", note.favoriteCount)), _react.default.createElement(_reactMarkdown.default, {
     source: note.content
   }));
 };
 
 var _default = Note;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-markdown":"../node_modules/react-markdown/lib/react-markdown.js","date-fns":"../node_modules/date-fns/esm/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"components/NoteFeed.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-markdown":"../node_modules/react-markdown/lib/react-markdown.js","date-fns":"../node_modules/date-fns/esm/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","@apollo/client":"../node_modules/@apollo/client/index.js","./NoteUser":"components/NoteUser.js","../gql/query":"gql/query.js"}],"components/NoteFeed.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -101431,6 +101590,14 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _client = require("@apollo/client");
+
+var _NoteFeed = _interopRequireDefault(require("../components/NoteFeed"));
+
+var _query = require("../gql/query");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -101439,12 +101606,27 @@ var MyNotes = function MyNotes() {
   (0, _react.useEffect)(function () {
     document.title = 'My Notes - Notedly';
   });
-  return _react.default.createElement("div", null, _react.default.createElement("h1", null, "Notedly"), _react.default.createElement("p", null, "These are my notes"));
+
+  var _useQuery = (0, _client.useQuery)(_query.GET_MY_NOTES),
+      loading = _useQuery.loading,
+      error = _useQuery.error,
+      data = _useQuery.data;
+
+  if (loading) return 'Loading...';
+  if (error) return "Error ".concat(error.message);
+
+  if (data.me.notes.length !== 0) {
+    return _react.default.createElement(_NoteFeed.default, {
+      notes: data.me.notes
+    });
+  } else {
+    return _react.default.createElement("p", null, "No notes yet");
+  }
 };
 
 var _default = MyNotes;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"pages/favorites.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteFeed":"components/NoteFeed.js","../gql/query":"gql/query.js"}],"pages/favorites.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -101454,6 +101636,14 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _client = require("@apollo/client");
+
+var _NoteFeed = _interopRequireDefault(require("../components/NoteFeed"));
+
+var _query = require("../gql/query");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -101462,12 +101652,27 @@ var Favorites = function Favorites() {
   (0, _react.useEffect)(function () {
     document.title = 'Favorites - Notedly';
   });
-  return _react.default.createElement("div", null, _react.default.createElement("h1", null, "Notedly"), _react.default.createElement("p", null, "These are my favorites"));
+
+  var _useQuery = (0, _client.useQuery)(_query.GET_MY_FAVORITES),
+      loading = _useQuery.loading,
+      error = _useQuery.error,
+      data = _useQuery.data;
+
+  if (loading) return 'Loading...';
+  if (error) return "Error ".concat(error.message);
+
+  if (data.me.favorites.length !== 0) {
+    return _react.default.createElement(_NoteFeed.default, {
+      notes: data.me.favorites
+    });
+  } else {
+    return _react.default.createElement("p", null, "No notes yet");
+  }
 };
 
 var _default = Favorites;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"pages/note.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteFeed":"components/NoteFeed.js","../gql/query":"gql/query.js"}],"pages/note.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -101842,6 +102047,8 @@ var _client = require("@apollo/client");
 
 var _NoteForm = _interopRequireDefault(require("../components/NoteForm"));
 
+var _query = require("../gql/query");
+
 var _templateObject;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -101872,6 +102079,11 @@ var NewNote = function NewNote(props) {
   });
 
   var _useMutation = (0, _client.useMutation)(NEW_NOTE, {
+    refetchQueries: [{
+      query: _query.GET_MY_NOTES
+    }, {
+      query: _query.GET_NOTES
+    }],
     onCompleted: function onCompleted(data) {
       props.history.push("note/".concat(data.newNote.id));
     }
@@ -101889,7 +102101,80 @@ var NewNote = function NewNote(props) {
 
 var _default = NewNote;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteForm":"components/NoteForm.js"}],"pages/index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteForm":"components/NoteForm.js","../gql/query":"gql/query.js"}],"pages/edit.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _client = require("@apollo/client");
+
+var _query = require("../gql/query");
+
+var _NoteForm = _interopRequireDefault(require("../components/NoteForm"));
+
+var _mutation = require("../gql/mutation");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var EditNote = function EditNote(props) {
+  var id = props.match.params.id;
+
+  var _useQuery = (0, _client.useQuery)(_query.GET_NOTE, {
+    variables: {
+      id: id
+    }
+  }),
+      loading = _useQuery.loading,
+      error = _useQuery.error,
+      data = _useQuery.data;
+
+  var _useQuery2 = (0, _client.useQuery)(_query.GET_ME),
+      userdata = _useQuery2.data;
+
+  var _useMutation = (0, _client.useMutation)(_mutation.EDIT_NOTE, {
+    variables: {
+      id: id
+    },
+    onCompleted: function onCompleted() {
+      props.history.push("/note/".concat(id));
+    }
+  }),
+      _useMutation2 = _slicedToArray(_useMutation, 1),
+      editNote = _useMutation2[0];
+
+  if (loading) return 'Loading...';
+  if (error) return _react.default.createElement("p", null, "Error! Note not found");
+
+  if (userdata.me.id !== data.note.author.id) {
+    return _react.default.createElement("p", null, "You do not have access to edit this note");
+  }
+
+  return _react.default.createElement(_NoteForm.default, {
+    content: data.note.content,
+    action: editNote
+  });
+};
+
+var _default = EditNote;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../gql/query":"gql/query.js","../components/NoteForm":"components/NoteForm.js","../gql/mutation":"gql/mutation.js"}],"pages/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -101918,6 +102203,8 @@ var _signup = _interopRequireDefault(require("./signup"));
 var _signin = _interopRequireDefault(require("./signin"));
 
 var _new = _interopRequireDefault(require("./new"));
+
+var _edit = _interopRequireDefault(require("./edit"));
 
 var _templateObject;
 
@@ -101951,6 +102238,9 @@ var Pages = function Pages() {
   }), _react.default.createElement(PrivateRoute, {
     path: "/new",
     component: _new.default
+  }), _react.default.createElement(PrivateRoute, {
+    path: "/edit/:id",
+    component: _edit.default
   }), _react.default.createElement(_reactRouterDom.Route, {
     path: "/note/:id",
     component: _note.default
@@ -101990,7 +102280,7 @@ var PrivateRoute = function PrivateRoute(_ref) {
 
 var _default = Pages;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/Layout":"components/Layout.js","./home":"pages/home.js","./mynotes":"pages/mynotes.js","./favorites":"pages/favorites.js","./note":"pages/note.js","./signup":"pages/signup.js","./signin":"pages/signin.js","./new":"pages/new.js"}],"App.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/Layout":"components/Layout.js","./home":"pages/home.js","./mynotes":"pages/mynotes.js","./favorites":"pages/favorites.js","./note":"pages/note.js","./signup":"pages/signup.js","./signin":"pages/signin.js","./new":"pages/new.js","./edit":"pages/edit.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -102083,7 +102373,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52126" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61548" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
