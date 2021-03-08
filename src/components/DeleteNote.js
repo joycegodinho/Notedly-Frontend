@@ -19,6 +19,8 @@ const DeleteNote = props => {
     }
   });
 
+  console.log(props.noteId)
+
   return <ButtonAsLink onClick={deleteNote}>Delete Note</ButtonAsLink>;
 };
 

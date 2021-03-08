@@ -101350,6 +101350,7 @@ var DeleteNote = function DeleteNote(props) {
       _useMutation2 = _slicedToArray(_useMutation, 1),
       deleteNote = _useMutation2[0];
 
+  console.log(props.noteId);
   return _react.default.createElement(_ButtonAsLink.default, {
     onClick: deleteNote
   }, "Delete Note");
@@ -102113,9 +102114,9 @@ var _react = _interopRequireDefault(require("react"));
 
 var _client = require("@apollo/client");
 
-var _query = require("../gql/query");
-
 var _NoteForm = _interopRequireDefault(require("../components/NoteForm"));
+
+var _query = require("../gql/query");
 
 var _mutation = require("../gql/mutation");
 
@@ -102135,6 +102136,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var EditNote = function EditNote(props) {
   var id = props.match.params.id;
+  console.log(id);
 
   var _useQuery = (0, _client.useQuery)(_query.GET_NOTE, {
     variables: {
@@ -102145,8 +102147,12 @@ var EditNote = function EditNote(props) {
       error = _useQuery.error,
       data = _useQuery.data;
 
+  console.log(data);
+
   var _useQuery2 = (0, _client.useQuery)(_query.GET_ME),
       userdata = _useQuery2.data;
+
+  console.log(userdata);
 
   var _useMutation = (0, _client.useMutation)(_mutation.EDIT_NOTE, {
     variables: {
@@ -102174,7 +102180,7 @@ var EditNote = function EditNote(props) {
 
 var _default = EditNote;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../gql/query":"gql/query.js","../components/NoteForm":"components/NoteForm.js","../gql/mutation":"gql/mutation.js"}],"pages/index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteForm":"components/NoteForm.js","../gql/query":"gql/query.js","../gql/mutation":"gql/mutation.js"}],"pages/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -102235,6 +102241,12 @@ var Pages = function Pages() {
   }), _react.default.createElement(PrivateRoute, {
     path: "/favorites",
     component: _favorites.default
+  }), _react.default.createElement(_reactRouterDom.Route, {
+    path: "/signup",
+    component: _signup.default
+  }), _react.default.createElement(_reactRouterDom.Route, {
+    path: "/signin",
+    component: _signin.default
   }), _react.default.createElement(PrivateRoute, {
     path: "/new",
     component: _new.default
@@ -102244,12 +102256,6 @@ var Pages = function Pages() {
   }), _react.default.createElement(_reactRouterDom.Route, {
     path: "/note/:id",
     component: _note.default
-  }), _react.default.createElement(_reactRouterDom.Route, {
-    path: "/signup",
-    component: _signup.default
-  }), _react.default.createElement(_reactRouterDom.Route, {
-    path: "/signin",
-    component: _signin.default
   })));
 };
 
@@ -102373,7 +102379,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61548" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56195" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

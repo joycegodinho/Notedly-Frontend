@@ -26,11 +26,12 @@ const Pages = () => {
                 <Route exact path="/" component={Home} />
                 <PrivateRoute path="/mynotes" component={MyNotes} />
                 <PrivateRoute path="/favorites" component={Favorites} />
+                <Route path="/signup" component={SignUp} />
+                <Route path="/signin" component={SignIn} />
                 <PrivateRoute path="/new" component={NewNote} />
                 <PrivateRoute path="/edit/:id" component={EditNote} />
                 <Route path="/note/:id" component={NotePage} />
-                <Route path="/signup" component={SignUp} />
-                <Route path="/signin" component={SignIn} />
+
             </Layout>
         </Router>
     );
