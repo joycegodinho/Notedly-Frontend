@@ -101286,11 +101286,11 @@ exports.GET_ME = GET_ME;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.DELETE_NOTE = exports.EDIT_NOTE = void 0;
+exports.TOGGLE_FAVORITE = exports.DELETE_NOTE = exports.EDIT_NOTE = void 0;
 
 var _client = require("@apollo/client");
 
-var _templateObject, _templateObject2;
+var _templateObject, _templateObject2, _templateObject3;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -101298,6 +101298,8 @@ var EDIT_NOTE = (0, _client.gql)(_templateObject || (_templateObject = _taggedTe
 exports.EDIT_NOTE = EDIT_NOTE;
 var DELETE_NOTE = (0, _client.gql)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  mutation deleteNote($id:ID!) {\n    deleteNote(id: $id)\n  }\n"])));
 exports.DELETE_NOTE = DELETE_NOTE;
+var TOGGLE_FAVORITE = (0, _client.gql)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  mutation toggleFavorite($id:ID!) {\n    toggleFavorite(id: $id) {\n      id\n      favoriteCount\n    }\n  }\n"])));
+exports.TOGGLE_FAVORITE = TOGGLE_FAVORITE;
 },{"@apollo/client":"../node_modules/@apollo/client/index.js"}],"components/DeleteNote.js":[function(require,module,exports) {
 "use strict";
 
@@ -101359,7 +101361,84 @@ var DeleteNote = function DeleteNote(props) {
 var _default = (0, _reactRouterDom.withRouter)(DeleteNote);
 
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./ButtonAsLink":"components/ButtonAsLink.js","../gql/mutation":"gql/mutation.js","../gql/query":"gql/query.js"}],"components/NoteUser.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./ButtonAsLink":"components/ButtonAsLink.js","../gql/mutation":"gql/mutation.js","../gql/query":"gql/query.js"}],"components/FavoriteNote.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _client = require("@apollo/client");
+
+var _ButtonAsLink = _interopRequireDefault(require("./ButtonAsLink"));
+
+var _mutation = require("../gql/mutation");
+
+var _query = require("../gql/query");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var FavoriteNote = function FavoriteNote(props) {
+  var _useState = (0, _react.useState)(props.favoriteCount),
+      _useState2 = _slicedToArray(_useState, 2),
+      count = _useState2[0],
+      setCount = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(props.me.favorites.filter(function (note) {
+    return note.id === props.noteId;
+  }).length > 0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      favorited = _useState4[0],
+      setFavorited = _useState4[1];
+
+  var _useMutation = (0, _client.useMutation)(_mutation.TOGGLE_FAVORITE, {
+    variables: {
+      id: props.noteId
+    },
+    refetchQueries: [{
+      query: _query.GET_MY_FAVORITES
+    }]
+  }),
+      _useMutation2 = _slicedToArray(_useMutation, 1),
+      toggleFavorite = _useMutation2[0];
+
+  return _react.default.createElement(_react.default.Fragment, null, favorited ? _react.default.createElement(_ButtonAsLink.default, {
+    onClick: function onClick() {
+      toggleFavorite();
+      setFavorited(false);
+      setCount(count - 1);
+    }
+  }, "Remove Favorite") : _react.default.createElement(_ButtonAsLink.default, {
+    onClick: function onClick() {
+      toggleFavorite();
+      setFavorited(true);
+      setCount(count + 1);
+    }
+  }, "Add Favorite"), ": ", count);
+};
+
+var _default = FavoriteNote;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","./ButtonAsLink":"components/ButtonAsLink.js","../gql/mutation":"gql/mutation.js","../gql/query":"gql/query.js"}],"components/NoteUser.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -101377,6 +101456,8 @@ var _query = require("../gql/query");
 
 var _DeleteNote = _interopRequireDefault(require("./DeleteNote"));
 
+var _FavoriteNote = _interopRequireDefault(require("./FavoriteNote"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var NoteUser = function NoteUser(props) {
@@ -101387,7 +101468,11 @@ var NoteUser = function NoteUser(props) {
 
   if (loading) return _react.default.createElement("p", null, "Loading...");
   if (error) return _react.default.createElement("p", null, "Error");
-  return _react.default.createElement(_react.default.Fragment, null, "Favorites: ", props.note.favoriteCount, _react.default.createElement("br", null), data.me.id === props.note.author.id && _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactRouterDom.Link, {
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_FavoriteNote.default, {
+    me: data.me,
+    noteId: props.note.id,
+    favoriteCount: props.note.favoriteCount
+  }), _react.default.createElement("br", null), data.me.id === props.note.author.id && _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactRouterDom.Link, {
     to: "/edit/".concat(props.note.id)
   }, "Edit"), _react.default.createElement("br", null), _react.default.createElement(_DeleteNote.default, {
     noteId: props.note.id
@@ -101396,7 +101481,7 @@ var NoteUser = function NoteUser(props) {
 
 var _default = NoteUser;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../gql/query":"gql/query.js","./DeleteNote":"components/DeleteNote.js"}],"components/Note.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../gql/query":"gql/query.js","./DeleteNote":"components/DeleteNote.js","./FavoriteNote":"components/FavoriteNote.js"}],"components/Note.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -102379,7 +102464,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56195" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65334" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { GET_ME } from '../gql/query';
 import DeleteNote from './DeleteNote'
+import FavoriteNote from './FavoriteNote'
 
 const NoteUser = props => {
     const { loading, error, data } = useQuery(GET_ME);
@@ -11,7 +12,7 @@ const NoteUser = props => {
     if(error) return <p>Error</p>
     return (
         <React.Fragment>
-            Favorites: {props.note.favoriteCount}<br />
+            <FavoriteNote me={data.me} noteId={props.note.id} favoriteCount={props.note.favoriteCount} /><br />
             
             {data.me.id === props.note.author.id && (
                 <React.Fragment>
