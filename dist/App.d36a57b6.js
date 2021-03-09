@@ -69876,7 +69876,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var _default = (0, _styledComponents.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    ", "\n\n    *, *:before, *:after {\n        box-sizing: border-box;\n    }\n\n    body,\n    html {\n        height: 100%;\n        margin: 0;\n    }\n\n    body {\n        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;\n        background-color: #fff;\n        line-height: 1.4;\n    }\n\n    a:link, \n    a:visited {\n        color: #0077cc;\n    }\n\n    a:hover, \n    a:focus {\n        color: #004499\n    }\n\n    code,\n    pre {\n        max-width: 100%;\n    }\n"])), _normalize.default);
+var _default = (0, _styledComponents.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    ", "\n\n    *, *:before, *:after {\n        box-sizing: border-box;\n    }\n\n    body,\n    html {\n        height: 100%;\n        margin: 0;\n        background-color: #56458D \n        opacity: 0.3;\n    }\n\n    body {\n        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;\n        background-color: #000000;\n        \n        line-height: 1.4;\n    }\n\n    a:link, \n    a:visited {\n        color: #FFFFFF;\n        text-decoration: none;\n    }\n\n    a:hover, \n    a:focus {\n        color: #004499\n    }\n\n    code,\n    pre {\n        max-width: 100%;\n    }\n"])), _normalize.default);
 
 exports.default = _default;
 },{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","normalize.css":"../node_modules/normalize.css/normalize.css"}],"../node_modules/@babel/runtime/helpers/setPrototypeOf/index.js":[function(require,module,exports) {
@@ -73762,7 +73762,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var ButtonAsLink = _styledComponents.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  background: none;\n  color: #0077cc;\n  border: none;\n  padding: 0;\n  font: inherit;\n  text-decoration: underline;\n  cursor: pointer;\n\n  :hover,\n  :active {\n    color: #004499;\n  }\n"])));
+var ButtonAsLink = _styledComponents.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  background: none;\n  color: #FFFFFF;\n  border: none;\n  padding: 0;\n  font: inherit;\n  text-decoration: none;\n  cursor: pointer;\n\n\n  :hover,\n  :active {\n    color: #004499;\n  }\n"])));
 
 var _default = ButtonAsLink;
 exports.default = _default;
@@ -73792,9 +73792,9 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var IS_LOGGED_IN = (0, _client.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    {\n        isLoggedIn @client\n    }\n"])));
 
-var HeaderBar = _styledComponents.default.header(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    width: 100%;\n    padding: 0.5em 1em;\n    diplay: flex;\n    height: 64px\n    position: fixed;\n    align-items: center;\n    background-color: #fff;\n    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);\n    z-index: 1;\n"])));
+var HeaderBar = _styledComponents.default.header(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    width: 100%;\n    padding: 0.5em 2em;\n    diplay: flex;\n    height: 64px\n    position: fixed;\n    align-items: center;\n    background-color: #242537;\n    background-image: linear-gradient(to right, #000000  ,#242537);\n    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);\n    z-index: 1;\n"])));
 
-var LogoText = _styledComponents.default.h1(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    margin: 0;\n    padding: 0;\n    display: inline;\n"])));
+var LogoText = _styledComponents.default.h1(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    margin: 0;\n    padding: 0;\n    display: inline;\n    color: #FFFFFF \n"])));
 
 var UserState = _styledComponents.default.div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    margin-left: auto;\n"])));
 
@@ -73850,9 +73850,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Nav = _styledComponents.default.nav(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    padding: 1em;\n    background: #f5f4f0;\n\n    @media (max-width: 700px) {\n        padding-top: 64px;\n    }\n\n    @media (min-width: 700px) {\n        position: fixed;\n        width: 220px;\n        height: calc(100% - 64px);\n    }\n"])));
+var Nav = _styledComponents.default.nav(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    padding: 1em;\n    background: #1F2027;\n    background-image: linear-gradient(to bottom, #000000  ,#242537);\n\n    @media (max-width: 700px) {\n        padding-top: 64px;\n    }\n\n    @media (min-width: 700px) {\n        position: fixed;\n        width: 220px;\n        height: calc(100% - 64px);\n    }\n"])));
 
-var NavList = _styledComponents.default.ul(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    margin: 0;\n    padding: 0;\n    list-style: none;\n    line-height: 2;\n\n    a {\n        text-decoration: none;\n        font-weight: bold;\n        font-size: 1.1em;\n        color: #333;\n    }\n\n    a:visited {\n        color: #333;\n    }\n\n    a:hover,\n    a:focus {\n        color: #0077cc;\n    }\n"])));
+var NavList = _styledComponents.default.ul(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    margin: 10px;\n    padding: 10px;\n    list-style: none;\n    line-height: 2;\n\n\n\n    a {\n        text-decoration: none;\n        font-weight: bold;\n        font-size: 1.1em;\n        color: #333;\n    }\n\n    a:visited {\n        color: #FFFFFF;\n    }\n\n    a:hover,\n    a:focus {\n        color: #0077cc;\n    }\n"])));
 
 var Navigation = function Navigation() {
   return _react.default.createElement(Nav, null, _react.default.createElement(NavList, null, _react.default.createElement("li", null, _react.default.createElement(_reactRouterDom.Link, {
@@ -73863,7 +73863,7 @@ var Navigation = function Navigation() {
     to: "/favorites"
   }, "Favorites")), _react.default.createElement("li", null, _react.default.createElement(_reactRouterDom.Link, {
     to: "/new"
-  }, "New"))));
+  }, "+ new"))));
 };
 
 var _default = Navigation;
@@ -101355,7 +101355,7 @@ var DeleteNote = function DeleteNote(props) {
   console.log(props.noteId);
   return _react.default.createElement(_ButtonAsLink.default, {
     onClick: deleteNote
-  }, "Delete Note");
+  }, "Delete");
 };
 
 var _default = (0, _reactRouterDom.withRouter)(DeleteNote);
@@ -101427,13 +101427,13 @@ var FavoriteNote = function FavoriteNote(props) {
       setFavorited(false);
       setCount(count - 1);
     }
-  }, "Remove Favorite") : _react.default.createElement(_ButtonAsLink.default, {
+  }, "- Favorite ", count) : _react.default.createElement(_ButtonAsLink.default, {
     onClick: function onClick() {
       toggleFavorite();
       setFavorited(true);
       setCount(count + 1);
     }
-  }, "Add Favorite"), ": ", count);
+  }, "+ Favorite ", count));
 };
 
 var _default = FavoriteNote;
@@ -101472,11 +101472,11 @@ var NoteUser = function NoteUser(props) {
     me: data.me,
     noteId: props.note.id,
     favoriteCount: props.note.favoriteCount
-  }), _react.default.createElement("br", null), data.me.id === props.note.author.id && _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactRouterDom.Link, {
+  }), _react.default.createElement("br", null), _react.default.createElement("p", null), data.me.id === props.note.author.id && _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactRouterDom.Link, {
     to: "/edit/".concat(props.note.id)
   }, "Edit"), _react.default.createElement("br", null), _react.default.createElement(_DeleteNote.default, {
     noteId: props.note.id
-  }), _react.default.createElement("p", null, props.note.id)));
+  })));
 };
 
 var _default = NoteUser;
@@ -101509,7 +101509,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var StyledNote = _styledComponents.default.article(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    max-width: 800px;\n    margin: 0 auto;\n"])));
+var StyledNote = _styledComponents.default.article(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    max-width: 800px;\n    margin: 0 auto;\n    color: #FFFFFF;\n\n"])));
 
 var MetaData = _styledComponents.default.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    @media (min-width: 500px) {\n        display: flex;\n        align-items: top;\n    }\n"])));
 
@@ -101558,7 +101558,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var NoteWrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    max-width: 800px;\n    margin: 0 auto;\n    margin-bottom: 2em;\n    padding-bottom: 2em;\n    border-bottom: 1px solid #f5f4f0;\n"])));
+var NoteWrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    max-width: 800px;\n    margin: 0 auto;\n    margin-bottom: 2em;\n    padding-top: 1em;\n    padding-bottom: 1em;\n    padding-left: 1em;\n    padding-right: 1em;\n    border-bottom: 1px groove #B8B8B9;\n    border-top: 1px groove #B8B8B9;\n    border-left: 1px groove #B8B8B9;\n    border-right: 1px groove #B8B8B9;\n    border-radius: 10px;\n    background-image: linear-gradient(to bottom right, #1F2027 ,#242537);\n    \n    \n"])));
 
 var NoteFeed = function NoteFeed(_ref) {
   var notes = _ref.notes;
@@ -101569,7 +101569,7 @@ var NoteFeed = function NoteFeed(_ref) {
       note: note
     }), _react.default.createElement(_reactRouterDom.Link, {
       to: "note/".concat(note.id)
-    }, "Permalink"));
+    }, "to note"));
   }));
 };
 
@@ -101591,7 +101591,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Button = _styledComponents.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral([" \n    display: block;\n    padding: 10px;\n    border: none;\n    border-radius: 5px;\n    font-size: 18px;\n    color: #fff;\n    background-color: #0077cc;\n    cursor: pointer;\n\n    :hover {\n        opacity: 0.8;\n    }\n\n    :active {\n        background-color: #005fa3;\n    }\n"])));
+var Button = _styledComponents.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral([" \n    display: block;\n    padding: 10px;\n    border: none;\n    border-radius: 5px;\n    font-size: 18px;\n    color: #fff;\n    background-color: #242537;\n    cursor: pointer;\n\n    :hover {\n        opacity: 0.8;\n    }\n\n    :active {\n        background-color: #242537;\n    }\n"])));
 
 var _default = Button;
 exports.default = _default;
@@ -101843,9 +101843,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Wrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    border 1px solid #f5f4f0;\n    max-width: 500px;\n    padding: 1em;\n    margin: 0 auto;\n"])));
+var Wrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    background-image: linear-gradient(to bottom right, #242537 ,#C3C3C7);\n    border 1px solid #f5f4f0;\n    max-width: 500px;\n    padding: 1em;\n    margin: 0 auto;\n    \n"])));
 
-var Form = _styledComponents.default.form(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    label,\n    input {\n        display: block;\n        line-height: 2em;\n    }\n    input {\n        width: 100%;\n        margin-bottom: 1em;\n    }\n"])));
+var Form = _styledComponents.default.form(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    \n    label,\n    input {\n        display: block;\n        line-height: 2em;\n    }\n    input {\n        width: 100%;\n        margin-bottom: 1em;\n    }\n"])));
 
 var UserForm = function UserForm(props) {
   var _useState = (0, _react.useState)(),
@@ -101864,7 +101864,7 @@ var UserForm = function UserForm(props) {
         variables: _objectSpread({}, values)
       });
     }
-  }, props.formType === 'signup' && _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("label", {
+  }, _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("label", {
     htmlFor: "username"
   }, "Username:"), _react.default.createElement("input", {
     required: true,
@@ -102464,7 +102464,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65334" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56674" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

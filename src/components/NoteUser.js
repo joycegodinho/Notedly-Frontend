@@ -13,12 +13,12 @@ const NoteUser = props => {
     return (
         <React.Fragment>
             <FavoriteNote me={data.me} noteId={props.note.id} favoriteCount={props.note.favoriteCount} /><br />
+            <p></p>
             
             {data.me.id === props.note.author.id && (
                 <React.Fragment>
                         <Link to={`/edit/${props.note.id}`}>Edit</Link><br />
                         <DeleteNote noteId={props.note.id} />
-                        <p>{props.note.id}</p>
                 </React.Fragment>
             )}
         </React.Fragment>

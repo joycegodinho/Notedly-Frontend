@@ -10,6 +10,8 @@ import { IS_LOGGED_IN } from '../gql/query'
 const StyledNote = styled.article`
     max-width: 800px;
     margin: 0 auto;
+    color: #FFFFFF;
+
 `;
 const MetaData = styled.div`
     @media (min-width: 500px) {

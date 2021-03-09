@@ -13,12 +13,13 @@ const IS_LOGGED_IN = gql`
 
 const HeaderBar = styled.header`
     width: 100%;
-    padding: 0.5em 1em;
+    padding: 0.5em 2em;
     diplay: flex;
     height: 64px
     position: fixed;
     align-items: center;
-    background-color: #fff;
+    background-color: #242537;
+    background-image: linear-gradient(to right, #000000  ,#242537);
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
     z-index: 1;
 `;
@@ -27,6 +28,7 @@ const LogoText = styled.h1`
     margin: 0;
     padding: 0;
     display: inline;
+    color: #FFFFFF 
 `;
 
 const UserState = styled.div`

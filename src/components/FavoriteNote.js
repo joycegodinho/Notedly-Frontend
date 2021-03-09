@@ -15,11 +15,11 @@ const FavoriteNote =  props => {
     return(
         <React.Fragment>
             {favorited ? (
-                <ButtonAsLink onClick={() => {toggleFavorite(); setFavorited(false); setCount(count - 1)}}>Remove Favorite</ButtonAsLink>
+                <ButtonAsLink onClick={() => {toggleFavorite(); setFavorited(false); setCount(count - 1)}}>- Favorite {count}</ButtonAsLink>
             ) : (
-                <ButtonAsLink onClick={() => {toggleFavorite(); setFavorited(true); setCount(count + 1)}}>Add Favorite</ButtonAsLink>
+                <ButtonAsLink onClick={() => {toggleFavorite(); setFavorited(true); setCount(count + 1)}}>+ Favorite {count}</ButtonAsLink>
             )}
-            : {count}
+    
         </React.Fragment>
     );
 };

@@ -4,7 +4,8 @@ import styled from 'styled-components';
 
 const Nav = styled.nav`
     padding: 1em;
-    background: #f5f4f0;
+    background: #1F2027;
+    background-image: linear-gradient(to bottom, #000000  ,#242537);
 
     @media (max-width: 700px) {
         padding-top: 64px;
@@ -18,10 +19,12 @@ const Nav = styled.nav`
 `;
 
 const NavList = styled.ul`
-    margin: 0;
-    padding: 0;
+    margin: 10px;
+    padding: 10px;
     list-style: none;
     line-height: 2;
+
+
 
     a {
         text-decoration: none;
@@ -31,7 +34,7 @@ const NavList = styled.ul`
     }
 
     a:visited {
-        color: #333;
+        color: #FFFFFF;
     }
 
     a:hover,
@@ -54,7 +57,7 @@ const Navigation = () => {
                     <Link to="/favorites">Favorites</Link>
                 </li>
                 <li>
-                    <Link to='/new'>New</Link>
+                    <Link to='/new'>+ new</Link>
                 </li>
             </NavList>
         </Nav>
