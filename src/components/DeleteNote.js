@@ -1,6 +1,7 @@
 import React from 'react';
 import { useMutation } from '@apollo/client';
 import { withRouter } from 'react-router-dom';
+import { BiXCircle } from "react-icons/bi";
 
 import ButtonAsLink from './ButtonAsLink';
 import { DELETE_NOTE } from '../gql/mutation';
@@ -21,7 +22,7 @@ const DeleteNote = props => {
 
   console.log(props.noteId)
 
-  return <ButtonAsLink onClick={deleteNote}>Delete</ButtonAsLink>;
+  return <ButtonAsLink onClick={deleteNote}><BiXCircle size="1.5em" /></ButtonAsLink>;
 };
 
 export default withRouter(DeleteNote);

@@ -1,6 +1,7 @@
 import React from 'react';
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { BiChevronDownSquare } from "react-icons/bi";
 
 const NoteWrapper = styled.div`
     max-width: 800px;
@@ -8,8 +9,8 @@ const NoteWrapper = styled.div`
     margin-bottom: 2em;
     padding-top: 1em;
     padding-bottom: 1em;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
     border-bottom: 1px groove #B8B8B9;
     border-top: 1px groove #B8B8B9;
     border-left: 1px groove #B8B8B9;
@@ -29,8 +30,8 @@ const NoteFeed = ({ notes }) => {
         <div>
             {notes.map(note => (
                 <NoteWrapper key={note.id}>
-                    <Note note={note} />
-                    <Link to={`note/${note.id}`}>to note</Link>
+                    <Note note={note} /> <br />
+                    <Link to={`note/${note.id}`}><BiChevronDownSquare size="1.5em" /></Link>
                 </NoteWrapper>
             ))}    
         </div>

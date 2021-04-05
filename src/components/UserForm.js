@@ -39,13 +39,13 @@ const UserForm = props => {
                 e.preventDefault();
                 props.action({variables: {...values}})
             }}>
-        
+                {props.formType === 'signup' && (
                     <React.Fragment>
 
                         <label htmlFor="username">Username:</label>
                         <input required type="text" id="username" name="username" placeholder="username" onChange={onChange}/>
                     </React.Fragment>
-               
+                )}
                 <label htmlFor="email">Email:</label>
                 <input required type="email" id="email" name="email" placeholder="Email" onChange={onChange}/>
                         

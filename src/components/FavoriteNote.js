@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai"
 
 import ButtonAsLink from './ButtonAsLink';
 
@@ -15,9 +16,9 @@ const FavoriteNote =  props => {
     return(
         <React.Fragment>
             {favorited ? (
-                <ButtonAsLink onClick={() => {toggleFavorite(); setFavorited(false); setCount(count - 1)}}>- Favorite {count}</ButtonAsLink>
+                <ButtonAsLink onClick={() => {toggleFavorite(); setFavorited(false); setCount(count - 1)}}><AiFillHeart size="1.5em"/> {count}</ButtonAsLink>
             ) : (
-                <ButtonAsLink onClick={() => {toggleFavorite(); setFavorited(true); setCount(count + 1)}}>+ Favorite {count}</ButtonAsLink>
+                <ButtonAsLink onClick={() => {toggleFavorite(); setFavorited(true); setCount(count + 1)}}><AiOutlineHeart size="1.5em"/> {count}</ButtonAsLink>
             )}
     
         </React.Fragment>

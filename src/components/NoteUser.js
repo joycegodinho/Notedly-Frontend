@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { Link } from 'react-router-dom';
+import { BiPencil } from "react-icons/bi";
 
 import { GET_ME } from '../gql/query';
 import DeleteNote from './DeleteNote'
@@ -13,15 +14,18 @@ const NoteUser = props => {
     return (
         <React.Fragment>
             <FavoriteNote me={data.me} noteId={props.note.id} favoriteCount={props.note.favoriteCount} /><br />
-            <p></p>
-            
+
             {data.me.id === props.note.author.id && (
                 <React.Fragment>
-                        <Link to={`/edit/${props.note.id}`}>Edit</Link><br />
-                        <DeleteNote noteId={props.note.id} />
+                        <DeleteNote noteId={props.note.id} /> <br />
+                        <Link to={`/edit/${props.note.id}`}><BiPencil size="1.5em"/></Link>
+                        
                 </React.Fragment>
             )}
+        <p></p>
+
         </React.Fragment>
+        
     )
     
 
