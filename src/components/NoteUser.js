@@ -15,14 +15,16 @@ const NoteUser = props => {
         <React.Fragment>
             <FavoriteNote me={data.me} noteId={props.note.id} favoriteCount={props.note.favoriteCount} /><br />
 
+ 
+
             {data.me.id === props.note.author.id && (
                 <React.Fragment>
                         <DeleteNote noteId={props.note.id} /> <br />
-                        <Link to={`/edit/${props.note.id}`}><BiPencil size="1.5em"/></Link>
+                        <Link to={`/edit/${props.note.id}`}><BiPencil color="#5D8AFF" size="1.5em"/></Link>
                         
                 </React.Fragment>
             )}
-        <p></p>
+ 
 
         </React.Fragment>
         

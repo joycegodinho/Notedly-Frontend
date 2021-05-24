@@ -2,10 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { GoHome } from "react-icons/go";
+import { GoComment } from "react-icons/go";
+import { AiOutlineStar } from "react-icons/ai";
+
 const Nav = styled.nav`
     padding: 1em;
-    background: #1F2027;
-    background-image: linear-gradient(to bottom, #000000  ,#242537);
+    background: #FFFFFF;
+
 
     @media (max-width: 700px) {
         padding-top: 64px;
@@ -13,14 +17,14 @@ const Nav = styled.nav`
 
     @media (min-width: 700px) {
         position: fixed;
-        width: 220px;
+        width: 300px;
         height: calc(100% - 64px);
     }
 `;
 
 const NavList = styled.ul`
-    margin: 10px;
-    padding: 10px;
+    margin: 40px;
+    padding: 35px;
     list-style: none;
     line-height: 2;
 
@@ -30,16 +34,17 @@ const NavList = styled.ul`
         text-decoration: none;
         font-weight: bold;
         font-size: 1.1em;
-        color: #333;
+        color: #5D8AFF;
     }
 
     a:visited {
-        color: #FFFFFF;
+        color: #5D8AFF;
     }
 
+    a:focus,
     a:hover,
-    a:focus {
-        color: #0077cc;
+    a:active {
+      color: #004499;
     }
 `;
 
@@ -48,16 +53,16 @@ const Navigation = () => {
         <Nav>
             <NavList>
                 <li>
-                    <Link to="/">Home</Link>
+                    <p></p>
+                    <Link to="/">Home <GoHome size="1.5em" /></Link>
                 </li>
                 <li>
-                    <Link to="/mynotes">My Notes</Link>
+                <p></p>
+                    <Link to="/mynotes">My Notes <GoComment size="1.5em"/></Link>
                 </li>
                 <li>
-                    <Link to="/favorites">Favorites</Link>
-                </li>
-                <li>
-                    <Link to='/new'>+ new</Link>
+                    <p></p>
+                    <Link to="/favorites">Favorites <AiOutlineStar size="1.5em" /></Link>
                 </li>
             </NavList>
         </Nav>

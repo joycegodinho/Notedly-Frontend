@@ -4,6 +4,7 @@ import { useQuery, gql } from '@apollo/client';
 import { Link, withRouter } from 'react-router-dom';
 
 import ButtonAsLink from './ButtonAsLink';
+import { GoCommentDiscussion } from "react-icons/go";
 
 const IS_LOGGED_IN = gql`
     {
@@ -18,22 +19,25 @@ const HeaderBar = styled.header`
     height: 64px
     position: fixed;
     align-items: center;
-    background-color: #242537;
-    background-image: linear-gradient(to right, #000000  ,#242537);
+    background-color: #FFFFFF;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
     z-index: 1;
 `;
 
 const LogoText = styled.h1`
-    margin: 0;
+    margin-left: 270px;
+    padding-top: 100px;
     padding: 0;
     display: inline;
-    color: #FFFFFF 
+    color: #2f4c58;
+ 
 `;
 
 const UserState = styled.div`
-    margin-left: auto;
+    margin-left: 1200px;
 `;
+
+
 
 const Header = props => {
     // query hook for user logged in state
@@ -41,7 +45,7 @@ const Header = props => {
   
     return (
       <HeaderBar>
-        <LogoText>Notedly</LogoText>
+        <LogoText>Note </LogoText><GoCommentDiscussion color="#b5d1f1" size="2.8em"/>
         {/* If logged in display a log out link, else display sign in options */}
         <UserState>
           {data.isLoggedIn ? (
@@ -66,8 +70,8 @@ const Header = props => {
               Logout
             </ButtonAsLink>
           ) : (
-            <p>
-              <Link to={'/signin'}>Sign In</Link> or{' '}
+            <p style={{ color: '#464646' }}>
+              <Link  to={'/signin'}>Sign In</Link> or{' '}
               <Link to={'/signup'}>Sign Up</Link>
             </p>
           )}

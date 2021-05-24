@@ -10,7 +10,7 @@ const Favorites = () => {
     });
 
     const { loading, error, data } = useQuery(GET_MY_FAVORITES);
-    if (loading) return 'Loading...';
+    if (loading) return '';
     if(error) return `Error ${error.message}`;
     if(data.me.favorites.length !== 0) {
         return <NoteFeed notes={data.me.favorites} />

@@ -20,7 +20,7 @@ const EditNote = props => {
         }
     });
 
-    if (loading) return 'Loading...';
+    if (loading) return '';
     if (error) return <p>Error! Note not found</p>;
     if (userdata.me.id !== data.note.author.id) {
 

@@ -21,7 +21,7 @@ const GET_NOTE = gql`
 const NotePage = props => {
     const id = props.match.params.id;
     const { loading, error, data } = useQuery(GET_NOTE, { variables: { id } });
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <p></p>;
     if (error) return <p>Note not found</p>;
     return (
         <Note note={data.note} />

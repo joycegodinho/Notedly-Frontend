@@ -10,7 +10,7 @@ const MyNotes = () => {
     });
 
     const { loading, error, data } = useQuery(GET_MY_NOTES);
-    if (loading) return 'Loading...';
+    if (loading) return '';
     if(error) return `Error ${error.message}`;
     if(data.me.notes.length !== 0) {
         return <NoteFeed notes={data.me.notes} />
